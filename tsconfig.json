@@ -17,17 +17,11 @@
       "dom"
     ],
     "paths": {
-      "@bootstrap/*": [
-        "./node_modules/bootstrap/scss/*"
-      ],
-      "@ebm/*": [
-        "./node_modules/ebm/*"
-      ],
-      "@sass/*": [
-        "assets/sass/*"
-      ],
       "@abi/*": [
         "assets/contracts/*"
+      ],
+      "@pipe/*": [
+        "app/@pipe/*"
       ],
       "@service/*": [
         "app/@service/*"

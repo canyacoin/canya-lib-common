@@ -11,8 +11,8 @@
     <div class="topbar-right d-print-none">
       <ul class="topbar-nav nav">
         <li class="nav-item" *ngFor="let navItem of _navItems">
-          <div *ngIf="navItem.replace" class="{{ navItem.class }}" [innerHTML]="navItem.innerHtml"></div>
-          <a *ngIf="!navItem.replace" class="nav-link {{ navItem.class }}" href="{{ navItem.href }}" target="{{ navItem.target }}" [innerHtml]="navItem.innerHtml"></a>
+          <div *ngIf="navItem.replace" class="{{ navItem.class }}" [innerHTML]="navItem.innerHtml | keepHtml "></div>
+          <a *ngIf="!navItem.replace" class="nav-link {{ navItem.class }}" href="{{ navItem.href }}" target="{{ navItem.target }}" [innerHtml]="navItem.innerHtml | keepHtml "></a>
         </li>
       </ul>
       <button class="btn btn-primary">About</button>
