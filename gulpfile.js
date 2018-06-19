@@ -13,27 +13,20 @@ let resolveNode = require('rollup-plugin-node-resolve')
 let commons = require('rollup-plugin-commonjs');
 let browserSync = require('browser-sync').create();
 let reload = browserSync.reload;
+const aliases = require('gulp-style-aliases');
 
 let fs                = require('fs');
 let path              = require('path');
 let cssTaskDictionary = [];
 let cssTaskList       = [];
-let jsTaskDictionary  = [];
-let jsTaskList        = [];
 let watchTaskList     = [];
 
 // SRC PATH definitions
-let publicFolder = './src';
+let publicFolder = './projects';
 let srcFolder = './src/assets';
 
 let cssSrcPath = `${srcFolder}/sass`;
-let cssDest    = `${publicFolder}`;
-
-let jsSrcPath = `${srcFolder}/js/src`;
-let jsDest    = `${publicFolder}/js`;
-
-let htmlSrcPath = `${srcFolder}/html`;
-let htmlDest    = `${publicFolder}`;
+let cssDest    = `${publicFolder}/common-lib/src`;
 
 // Gather Scss src files to watch and compile
 (fs.readdirSync(cssSrcPath) || []).filter(directory => {
@@ -60,10 +53,9 @@ cssTaskDictionary.forEach(taskDef => {
   cssTaskList.push(taskName);
 
   // Output compressed styles for prod and dev
-  let outputStyle = {outputStyle: 'expanded'};
-  outputStyle.outputStyle = 'compressed';
-  // if (process.env.ENV == 'prod' || process.env.ENV == 'dev') {
-  // }
+  let outputStyle = {
+    outputStyle: 'compressed'
+  };
 
   // Sass will wat0 ch for changes in these actions
   let srcPathFile = path.join(cssSrcPath, taskDef.module, taskDef.ctrl, taskDef.action);
@@ -78,6 +70,11 @@ cssTaskDictionary.forEach(taskDef => {
 
   gulp.task(taskName, () => {
     gulp.src([srcPathFile])
+      .pipe(aliases({
+        '@bootstrap': 'node_modules/bootstrap/scss',
+        '@ebm': 'node_modules/ebm',
+        '@sass': 'src/assets/sass',
+        }))
       .pipe(sass(outputStyle).on('error', sass.logError))
       .pipe(autoprefixer({
         browsers: ['last 2 versions'],
@@ -108,26 +105,8 @@ gulp.task('global', () => {
 });
 // watchTaskList.push('global');
 
-gulp.task('browser-sync', function() {
-  browserSync.init({
-    port: 3000,
-    proxy: 'http://localhost:4200',
-    open: false,
-    // server: {
-      // baseDir: htmlDest
-    // },
-    ui: {
-      port: 3001
-    }
-  });
-});
-// watchTaskList.push('browser-sync');
-
 // Build styles task
 gulp.task('styles', cssTaskList);
-
-// Build js task
-gulp.task('js', jsTaskList);
 
 // Keep watching CSS, JS and HTML changes
 gulp.task('watch', watchTaskList);

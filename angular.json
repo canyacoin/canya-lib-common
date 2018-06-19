@@ -148,7 +148,7 @@
             "production": {
               "project": "projects/common-lib/ng-package.prod.json"
             }
-          }
+          },
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
