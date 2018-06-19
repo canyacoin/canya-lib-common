@@ -131,6 +131,46 @@
           }
         }
       }
+    },
+    "common-lib": {
+      "root": "projects/common-lib",
+      "sourceRoot": "projects/common-lib/src",
+      "projectType": "library",
+      "prefix": "canyalib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/common-lib/tsconfig.lib.json",
+            "project": "projects/common-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/common-lib/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/common-lib/src/test.ts",
+            "tsConfig": "projects/common-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/common-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/common-lib/tsconfig.lib.json",
+              "projects/common-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "canya-common"

@@ -46,6 +46,12 @@
       ],
       "@environment/*": [
         "environments/*"
+      ],
+      "common-lib": [
+        "dist/common-lib"
+      ],
+      "common-lib/*": [
+        "dist/common-lib/*"
       ]
     }
   }
