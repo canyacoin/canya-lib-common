@@ -23,11 +23,11 @@ let jsTaskList        = [];
 let watchTaskList     = [];
 
 // SRC PATH definitions
-let publicFolder = './build';
-let srcFolder = '.';
+let publicFolder = './src';
+let srcFolder = './src/assets';
 
 let cssSrcPath = `${srcFolder}/sass`;
-let cssDest    = `${publicFolder}/css`;
+let cssDest    = `${publicFolder}`;
 
 let jsSrcPath = `${srcFolder}/js/src`;
 let jsDest    = `${publicFolder}/js`;
@@ -38,7 +38,9 @@ let htmlDest    = `${publicFolder}`;
 // Gather Scss src files to watch and compile
 (fs.readdirSync(cssSrcPath) || []).filter(directory => {
   let isDirectory = fs.lstatSync(path.join(cssSrcPath, directory)).isDirectory();
-  return !/global/.test(directory) && isDirectory;
+  return  !/global/.test(directory) &&
+          !/theme/.test(directory) &&
+          isDirectory;
 }).forEach(module => {
   (fs.readdirSync(path.join(cssSrcPath, module)) || []).filter(moduleCtrl => {
     return fs.lstatSync(path.join(cssSrcPath, module, moduleCtrl)).isDirectory();
@@ -63,8 +65,16 @@ cssTaskDictionary.forEach(taskDef => {
   // if (process.env.ENV == 'prod' || process.env.ENV == 'dev') {
   // }
 
-  // Sass will watch for changes in these actions
+  // Sass will wat0 ch for changes in these actions
   let srcPathFile = path.join(cssSrcPath, taskDef.module, taskDef.ctrl, taskDef.action);
+  let destination;
+
+  if (taskDef.module == 'main') {
+    destination = path.join(publicFolder);
+  } else {
+    destination = path.join(cssDest, taskDef.module, taskDef.ctrl);
+  }
+
 
   gulp.task(taskName, () => {
     gulp.src([srcPathFile])
@@ -74,7 +84,7 @@ cssTaskDictionary.forEach(taskDef => {
         cascade: false,
         flexbox: true,
         }))
-      .pipe(gulp.dest(path.join(cssDest, taskDef.module, taskDef.ctrl))
+      .pipe(gulp.dest(destination)
     );
   });
 
@@ -86,70 +96,6 @@ cssTaskDictionary.forEach(taskDef => {
   });
 });
 
-// Read ./public/js/src/ files
-(fs.readdirSync(jsSrcPath) || []).filter(directory => {
-  return fs.lstatSync(path.join(jsSrcPath, directory)).isDirectory();
-}).forEach(module => {
-  (fs.readdirSync(path.join(jsSrcPath, module)) || []).filter(moduleCtrl => {
-    return fs.lstatSync(path.join(jsSrcPath, module, moduleCtrl)).isDirectory();
-  }).forEach(ctrl => {
-    fs.readdirSync(path.join(jsSrcPath, module, ctrl) || []).forEach(action => {
-      jsTaskDictionary.push({ module: module, ctrl: ctrl, action: action });
-    });
-  });
-});
-
-jsTaskDictionary.forEach(taskDef => {
-
-  let module = taskDef.module;
-  let ctrl = taskDef.ctrl;
-  let action = taskDef.action;
-
-  let taskSuffix = module + '-' + ctrl + '-' + action;
-  let taskName = 'js-' + taskSuffix;
-  jsTaskList.push(taskName);
-
-  // build prod tasks
-  gulp.task('js-' + taskSuffix, () => {
-
-    let $rollup = rollup({
-        entry: path.join(jsSrcPath, module, ctrl, action, 'main.js'),
-        sourceMap: true,
-        format: 'iife',
-        moduleName: module + '.' + ctrl + '.' + action + '.js',
-        plugins: [
-          resolveNode({ jsnext: true, main: true }),
-          commons(),
-        ],
-      })
-      .pipe(source('main.js'))
-      .pipe(buffer());
-    if (process.env.ENV == 'prod' || process.env.ENV == 'dev') {
-      $rollup.pipe(uglify());
-    }
-    $rollup.pipe(sourcemaps.init({ loadMaps: true }))
-      .pipe(rename(action + '.js'))
-      .on('error', gutil.log)
-      .pipe(sourcemaps.write('./'))
-      .pipe(gulp.dest(path.join(jsDest, module, ctrl)));
-
-    return $rollup;
-  });
-
-  // watch tasks
-  let watchTaskName = 'watch-' + taskName;
-  watchTaskList.push(watchTaskName);
-  gulp.task(watchTaskName, () => {
-    gulp.watch(path.join(jsSrcPath, module, ctrl, action, '*.js'), ['js-' + taskSuffix]);
-  })
-});
-
-// Watch for js/control files changes
-// It will trigger all js tasks
-gulp.task('control', () => {
-  gulp.watch(`${publicFolder}/js/control/*.js`, jsTaskList);
-});
-watchTaskList.push('control');
 
 // Watch for css/global
 // Triggers all css tasks
@@ -160,33 +106,22 @@ gulp.task('global', () => {
 
   gulp.watch(`${publicFolder}/**/**`).on('change', reload);
 });
-watchTaskList.push('global');
-
-// Fileinclude
-gulp.task('fileinclude', function() {
-  gulp.src([`!${htmlSrcPath}/includes/**`, `!${htmlSrcPath}/exchange/components/**`, `${htmlSrcPath}/**/*.html`])
-    .pipe(fileinclude({
-      prefix: '@@',
-      basepath: '@file'
-    }))
-    .pipe(gulp.dest(htmlDest));
-  gulp.watch(`${htmlSrcPath}/**/*.html`, ['fileinclude']);
-});
-watchTaskList.push('fileinclude');
+// watchTaskList.push('global');
 
 gulp.task('browser-sync', function() {
   browserSync.init({
     port: 3000,
+    proxy: 'http://localhost:4200',
     open: false,
-    server: {
-      baseDir: htmlDest
-    },
+    // server: {
+      // baseDir: htmlDest
+    // },
     ui: {
       port: 3001
     }
   });
 });
-watchTaskList.push('browser-sync');
+// watchTaskList.push('browser-sync');
 
 // Build styles task
 gulp.task('styles', cssTaskList);

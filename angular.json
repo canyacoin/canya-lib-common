@@ -23,8 +23,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/assets/sass/main/component/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets",
+                "node_modules"
+              ]
+            },
             "scripts": [
               {
                 "input": "node_modules/document-register-element/build/document-register-element.js"
