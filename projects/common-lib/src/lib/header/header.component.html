@@ -1,23 +1,18 @@
 <!-- Topbar -->
-<nav class="topbar topbar-expand-md topbar-sticky" id="section-top">
+<nav class="topbar topbar-expand-md topbar-sticky">
   <div class="container">
 
     <div class="topbar-left">
-      <a class="topbar-brand" href="#">
-        <img class="logo-default" src="https://canya.com/assets/img/logo.svg" width="auto" height="36px" alt="logo">
+      <a class="topbar-brand" href="{{ _logo.href }}">
+        <img class="logo-default" src="{{ _logo.src }}" alt="{{ _logo.alt }}">
       </a>
     </div>
 
     <div class="topbar-right d-print-none">
       <ul class="topbar-nav nav">
-        <li class="nav-item">
-          <a class="nav-link" href="https://blog.canya.com.au/" target="_blank">Blog</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://forum.canya.io" target="_blank">Forum</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://t.me/canyacoin" target="_blank">Telegram</a>
+        <li class="nav-item" *ngFor="let navItem of _navItems">
+          <div *ngIf="navItem.replace" class="{{ navItem.class }}" [innerHTML]="navItem.innerHtml"></div>
+          <a *ngIf="!navItem.replace" class="nav-link {{ navItem.class }}" href="{{ navItem.href }}" target="{{ navItem.target }}" [innerHtml]="navItem.innerHtml"></a>
         </li>
       </ul>
       <button class="btn btn-primary">About</button>

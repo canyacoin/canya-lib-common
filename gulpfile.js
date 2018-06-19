@@ -63,6 +63,7 @@ cssTaskDictionary.forEach(taskDef => {
 
   if (taskDef.module == 'main') {
     destination = path.join(publicFolder);
+    return false
   } else {
     destination = path.join(cssDest, taskDef.module, taskDef.ctrl);
   }

@@ -1,6 +1,12 @@
 @import "sass/canya";
 
+$site-wrapper-padding-top: 112px;
+
 body {
   background-color: $gray-100;
+}
+
+.site-wrapper {
+  padding-top: $site-wrapper-padding-top;
 }
 
