@@ -15,7 +15,8 @@
           <a *ngIf="!navItem.replace" class="nav-link {{ navItem.class }}" href="{{ navItem.href }}" target="{{ navItem.target }}" [innerHtml]="navItem.innerHtml | keepHtml "></a>
         </li>
       </ul>
-      <button class="btn btn-primary">About</button>
+      <button *ngFor="let btn of _buttons" class="{{ btn.class }}" [innerHTML]="btn.innerHtml | keepHtml"></button>
+      <a *ngFor="let btn of _anchorButtons" class="{{ btn.class }}" [innerHTML]="btn.innerHtml | keepHtml" href="{{ btn.href }}"></a>
     </div>
 
   </div>

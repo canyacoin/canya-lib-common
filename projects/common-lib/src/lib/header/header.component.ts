@@ -36,6 +36,9 @@ export class HeaderComponent implements OnInit {
     new NavItem('https://t.me/canyacoin', 'Telegram'),
   ]
 
+  _buttons: Array<NavItem> = []
+  _anchorButtons: Array<NavItem> = []
+
   @Input()
   set logo(logo: any) {
     this._logo.src = logo.src
@@ -52,6 +55,30 @@ export class HeaderComponent implements OnInit {
       _navItem.replace = navItem.replace
 
       this._navItems[navItem.index] = _navItem
+    })
+  }
+
+  @Input()
+  set buttons(buttons: Array<any>) {
+    buttons.forEach(navItem => {
+      let _navItem = new NavItem(navItem.href, navItem.innerHtml)
+
+      _navItem.class = navItem.class
+      _navItem.replace = navItem.replace
+
+      this._buttons[navItem.index] = _navItem
+    })
+  }
+
+  @Input()
+  set anchorButtons(anchorButtons: Array<any>) {
+    anchorButtons.forEach(navItem => {
+      let _navItem = new NavItem(navItem.href, navItem.innerHtml)
+
+      _navItem.class = navItem.class
+      _navItem.replace = navItem.replace
+
+      this._anchorButtons[navItem.index] = _navItem
     })
   }
 

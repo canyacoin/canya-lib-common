@@ -29,3 +29,15 @@
   height: 35px;
   width: auto;
 }
+
+.topbar-right {
+  .btn:nth-child(n+3) {
+    margin-left: get-spacer(4);
+  }
+}
+
+a {
+  &.btn {
+    text-decoration: none;
+  }
+}

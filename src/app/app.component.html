@@ -2,7 +2,9 @@
 
 <canyalib-header
   [logo]="{ src: 'https://canya.com/assets/img/logo.svg', alt: 'CanYa Common', href: '#' }"
-  [navItems]="[{ index: 3, href: '#', innerHtml: 'custom link', class: 'custom-class' }, { index: 2, replace: true, class: 'custom-class', innerHtml: '<span class=my-class>custom item</span>' }]">
+  [navItems]="[{ index: 3, href: '#', innerHtml: 'custom link', class: 'custom-class' }, { index: 2, replace: true, class: 'custom-class', innerHtml: '<span class=my-class>custom item</span>' }]"
+  [buttons]="[{ index: 0, innerHtml: 'Button', class: 'btn btn-primary' }]"
+  [anchorButtons]="[{ index: 0, innerHtml: 'Button', class: 'btn btn-danger', href: '#' }, { index: 1, innerHtml: 'Button', class: 'btn btn-success', href: '#' }]">
   </canyalib-header>
 
 <!--The content below is only a placeholder and can be replaced.-->
