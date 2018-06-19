@@ -4,7 +4,7 @@ Reusable components across all CanApps
 
 ## Important
 
-If you plan to add a new library component or edit an existing one, your first step should be **to update the (./projects/common-lib/package.json)[https://github.com/canyaio/Common/blob/master/projects/common-lib/package.json#L3] version**. 
+If you plan to add a new library component or edit an existing one, your first step should be **to update the [./projects/common-lib/package.json](https://github.com/canyaio/Common/blob/master/projects/common-lib/package.json#L3) version**. 
 
 This will prevent overwriting the npm package registry and therefore all of the CanApps that use the package.
 
@@ -16,17 +16,17 @@ First, clone or fork this repo and perform a `cd Common; npm install` command to
 
 Use the `ng generate component <component-name> --project=common-lib` command to add a new component to the common library.
 
-Then, add the component class name to the (./projects/common-lib/src/lib/common-lib.module.ts)[https://github.com/canyaio/Common/blob/master/projects/common-lib/src/lib/common-lib.module.ts] file.
+Then, add the component class name to the [./projects/common-lib/src/lib/common-lib.module.ts](https://github.com/canyaio/Common/blob/master/projects/common-lib/src/lib/common-lib.module.ts) file.
 
 ### Styling the component
 
-Create a new file `.scss` inside (./src/assets/sass/lib/<component-name>/<component-name>.component.scss)[https://github.com/canyaio/Common/blob/master/src/assets/sass/lib]
+Create a new file `.scss` inside [./src/assets/sass/lib/<component-name>/<component-name>.component.scss](https://github.com/canyaio/Common/blob/master/src/assets/sass/lib)
 
 Open a new terminal tab and run `gulp watch` in the project root. 
 
 Gulp should watch for changes in the file you created and output it in the corresponding library component directory.
 
-Look at the (header.component.scss)[https://github.com/canyaio/Common/blob/master/src/assets/sass/lib/header/header.component.scss] reference.
+Look at the [header.component.scss](https://github.com/canyaio/Common/blob/master/src/assets/sass/lib/header/header.component.scss) reference.
 
 ### Configuring the component
 
