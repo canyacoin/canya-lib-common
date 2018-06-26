@@ -14,25 +14,25 @@
           <div *ngIf="navItem.replace"
             class="{{ navItem.class }}"
             (click)="onClick(navItem.onClick)"
-            [innerHTML]="navItem.innerHtml | keepHtml "></div>
+            [innerHTML]="navItem.innerHtml | translate | keepHtml "></div>
 
           <a *ngIf="!navItem.replace"
             class="nav-link {{ navItem.class }}"
             (click)="onClick(navItem.onClick)"
             href="{{ navItem.href }}"
             target="{{ navItem.target }}"
-            [innerHtml]="navItem.innerHtml | keepHtml "></a>
+            [innerHtml]="navItem.innerHtml | translate | keepHtml "></a>
         </li>
       </ul>
       <button *ngFor="let btn of _buttons"
         class="{{ btn.class }}"
         (click)="onClick(btn.onClick)"
-        [innerHTML]="btn.innerHtml | keepHtml"></button>
+        [innerHTML]="btn.innerHtml | translate | keepHtml"></button>
 
       <a *ngFor="let btn of _anchorButtons"
         class="{{ btn.class }}"
         (click)="onClick(btn.onClick)"
-        [innerHTML]="btn.innerHtml | keepHtml"
+        [innerHTML]="btn.innerHtml | translate | keepHtml"
         href="{{ btn.href }}"></a>
     </div>
 

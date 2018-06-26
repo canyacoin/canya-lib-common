@@ -33,9 +33,9 @@ export class HeaderComponent implements OnInit {
   }
 
   _navItems: Array<NavItem> = [
-    new NavItem('https://blog.canya.com.au/', 'Blog'),
-    new NavItem('https://forum.canya.io', 'Forum'),
-    new NavItem('https://t.me/canyacoin', 'Telegram'),
+    new NavItem('https://blog.canya.com.au/', 'header.blog'),
+    new NavItem('https://forum.canya.io', 'header.forum'),
+    new NavItem('https://t.me/canyacoin', 'header.telegram'),
   ]
 
   _buttons: Array<NavItem> = []

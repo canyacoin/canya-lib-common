@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { LanguageService, Language } from '../@service/language.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'canyalib-language-switch',
@@ -17,7 +18,17 @@ export class LanguageSwitchComponent implements OnInit {
     this._exclude = exclude
   }
 
-  constructor(public lang: LanguageService) {
+  constructor(
+    public lang: LanguageService,
+    public translate: TranslateService) {
+
+    translate.setDefaultLang('en_US')
+
+    lang.onLanguageChange.subscribe(language => {
+      console.log(language)
+      translate.use(language.code)
+    })
+
   }
 
   ngOnInit() {

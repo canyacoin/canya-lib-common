@@ -11,16 +11,12 @@ export class AppComponent {
   title = 'app';
 
   constructor(public lang: LanguageService){
-    lang.onLanguageChange.subscribe(language => {
-      console.log(language)
-    })
-
     let jp = new Language('jp_JP', 'JP', 'Japanese')
     lang.addLanguage(jp)
 
     let dog = new Language('dog', 'DOG', 'Dog')
-    lang.updateLanguage('en_US', dog)
+    lang.updateLanguage('jp_JP', dog)
 
-    lang.setCurrentLanguage('dog')
+    lang.setCurrentLanguage('en_US')
   }
 }

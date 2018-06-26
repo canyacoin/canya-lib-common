@@ -1,0 +1,11 @@
+{
+  "header": {
+    "blog": "Blog",
+    "forum": "Forum",
+    "telegram": "Telegram",
+    "custom-link": "custom link",
+    "button": "Button",
+    "custom-item": "<span class=my-class>custom item</span>"
+  },
+  "welcome-to-app": "Welcome to {{ title }}!"
+}
