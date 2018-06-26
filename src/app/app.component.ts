@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LanguageService } from 'common-lib';
+import { LanguageService, Language } from 'common-lib';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +14,14 @@ export class AppComponent {
     lang.onLanguageChange.subscribe(language => {
       console.log(language)
     })
+
+    let jp = new Language('jp_JP', 'JP', 'Japanese')
+    lang.addLanguage(jp)
+
+    let dog = new Language('dog', 'DOG', 'Dog')
+    lang.updateLanguage('en_US', dog)
+
+    lang.setCurrentLanguage('dog')
   }
 
 }
