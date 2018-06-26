@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LanguageService } from '../@service/language.service';
 
 @Component({
   selector: 'canyalib-language-switch',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LanguageSwitchComponent implements OnInit {
 
-  constructor() { }
+  constructor(public lang: LanguageService) {}
 
   ngOnInit() {
   }

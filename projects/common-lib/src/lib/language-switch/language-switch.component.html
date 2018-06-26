@@ -1,13 +1,13 @@
 <div id="language-switch">
   <div class="icon"><i class="fa fa-language"></i></div>
   <div class="selected-language">
-    <span>EN</span>
+    <span>{{ lang.currentLanguage.symbol }}</span>
   </div>
   <div class="languages-list">
-    <article class="lang">
+    <article class="lang" (click)="lang.setCurrentLanguage('es_ES')">
       <span>Español</span>
     </article>
-    <article class="lang">
+    <article class="lang" (click)="lang.setCurrentLanguage('en_US')">
       <span>English</span>
     </article>
     <article class="lang">
