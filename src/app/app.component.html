@@ -3,8 +3,8 @@
 <canyalib-header
   [logo]="{ src: 'https://canya.com/assets/img/logo.svg', alt: 'CanYa Common', routerLink: ['/home'] }"
   [navItems]="[{ index: 3, href: '#', innerHtml: 'header.custom-link', class: 'custom-class' }, { index: 2, replace: true, class: 'custom-class', innerHtml: 'header.custom-item', onClick: [lang, 'sort', [1,2,3]] }]"
-  [buttons]="[{ index: 0, innerHtml: 'header.button', class: 'btn btn-primary', onClick: [lang, 'sort', [1,2,3]] }]"
-  [anchorButtons]="[{ index: 0, innerHtml: 'header.button', class: 'btn btn-danger', href: '#' }, { index: 1, innerHtml: 'CanApp Cards', class: 'btn btn-success', routerLink: ['/can-cards'] }]">
+  [buttons]="[{ index: 0, innerHtml: 'header.button', class: 'btn btn-primary btn-sm', onClick: [lang, 'sort', [1,2,3]] }]"
+  [anchorButtons]="[{ index: 0, innerHtml: 'header.button', class: 'btn btn-danger btn-sm', href: '#' }, { index: 1, innerHtml: 'CanApp Cards', class: 'btn btn-success btn-sm btn-outline', routerLink: ['/can-cards'] }]">
   </canyalib-header>
 
 <canyalib-language-switch [exclude]="[]"></canyalib-language-switch>
