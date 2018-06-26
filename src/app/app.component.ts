@@ -10,7 +10,7 @@ import { LanguageService, Language } from 'common-lib';
 export class AppComponent {
   title = 'app';
 
-  constructor(private lang: LanguageService){
+  constructor(public lang: LanguageService){
     lang.onLanguageChange.subscribe(language => {
       console.log(language)
     })
@@ -23,5 +23,4 @@ export class AppComponent {
 
     lang.setCurrentLanguage('dog')
   }
-
 }

@@ -11,7 +11,7 @@ import { LanguageSwitchComponent } from './language-switch/language-switch.compo
   imports: [
     CommonModule
   ],
-  providers: [],
+  providers: [LanguageService],
   declarations: [CommonLibComponent, HeaderComponent, KeepHtmlPipe, LanguageSwitchComponent],
   exports: [CommonLibComponent, HeaderComponent, KeepHtmlPipe, LanguageSwitchComponent]
 })

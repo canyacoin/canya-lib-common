@@ -1,10 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { LanguageService, Language } from '../@service/language.service';
 
 @Component({
   selector: 'canyalib-language-switch',
   templateUrl: './language-switch.component.html',
-  styleUrls: ['./language-switch.component.css']
+  styleUrls: ['./language-switch.component.css'],
+  encapsulation: ViewEncapsulation.Native,
 })
 
 export class LanguageSwitchComponent implements OnInit {
