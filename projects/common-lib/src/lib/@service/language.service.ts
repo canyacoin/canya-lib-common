@@ -39,7 +39,6 @@ export class LanguageService {
   }
 
   sort(){
-    console.log('sort')
     this.activeLanguages.sort(function(a, b) {
       let textA = a.name
       let textB = b.name
