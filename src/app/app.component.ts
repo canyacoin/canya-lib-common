@@ -8,8 +8,6 @@ import { LanguageService, Language } from 'common-lib';
 })
 
 export class AppComponent {
-  title = 'app';
-
   constructor(public lang: LanguageService){
     let jp = new Language('jp_JP', 'JP', 'Japanese')
     lang.addLanguage(jp)

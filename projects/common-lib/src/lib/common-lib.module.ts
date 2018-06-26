@@ -1,5 +1,6 @@
 import { NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
 import { CommonLibComponent } from './common-lib.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -20,6 +21,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   imports: [
     CommonModule,
     HttpClientModule,
+    RouterModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

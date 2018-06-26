@@ -3,6 +3,7 @@ import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 export class NavItem {
 
   href: string
+  routerLink: any
   target: string = '_blank'
   innerHtml: string
   class: string
@@ -46,6 +47,7 @@ export class HeaderComponent implements OnInit {
     this._logo.src = logo.src
     this._logo.alt = logo.alt
     this._logo.href = logo.href
+    this._logo.routerLink = logo.routerLink
     this._logo.onClick = logo.onClick
   }
 
@@ -57,6 +59,7 @@ export class HeaderComponent implements OnInit {
       _navItem.class = navItem.class
       _navItem.replace = navItem.replace
       _navItem.onClick = navItem.onClick
+      _navItem.routerLink = navItem.routerLink
 
       this._navItems[navItem.index] = _navItem
     })
@@ -70,6 +73,7 @@ export class HeaderComponent implements OnInit {
       _navItem.class = navItem.class
       _navItem.replace = navItem.replace
       _navItem.onClick = navItem.onClick
+      _navItem.routerLink = navItem.routerLink
 
       this._buttons[navItem.index] = _navItem
     })
@@ -83,6 +87,7 @@ export class HeaderComponent implements OnInit {
       _navItem.class = navItem.class
       _navItem.replace = navItem.replace
       _navItem.onClick = navItem.onClick
+      _navItem.routerLink = navItem.routerLink
 
       this._anchorButtons[navItem.index] = _navItem
     })
