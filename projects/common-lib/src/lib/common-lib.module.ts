@@ -11,6 +11,7 @@ import { LanguageSwitchComponent } from './language-switch/language-switch.compo
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { FooterComponent } from './footer/footer.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -37,11 +38,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     CommonLibComponent,
     HeaderComponent,
     KeepHtmlPipe,
-    LanguageSwitchComponent
+    LanguageSwitchComponent,
+    FooterComponent,
   ],
   exports: [
     CommonLibComponent,
     HeaderComponent,
+    FooterComponent,
     KeepHtmlPipe,
     LanguageSwitchComponent,
     TranslateModule
