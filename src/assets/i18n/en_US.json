@@ -7,5 +7,8 @@
     "button": "Button",
     "custom-item": "<span class=my-class>custom item</span>"
   },
+  "footer": {
+    "home": "Home"
+  },
   "welcome-to-app": "Welcome to {{ title }}!"
 }
