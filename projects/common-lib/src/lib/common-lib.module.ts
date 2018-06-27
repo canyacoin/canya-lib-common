@@ -1,17 +1,16 @@
 import { NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { CommonLibComponent } from './common-lib.component';
-import { HeaderComponent } from './header/header.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-
-import { KeepHtmlPipe } from './@pipe/keep-html.pipe';
-import { LanguageService } from './@service/language.service';
-import { LanguageSwitchComponent } from './language-switch/language-switch.component';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
 import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { LanguageSwitchComponent } from './language-switch/language-switch.component';
+
+import { KeepHtmlPipe } from './@pipe/keep-html.pipe';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -31,23 +30,19 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     })
   ],
-  providers: [
-    LanguageService
-  ],
+  providers: [],
   declarations: [
-    CommonLibComponent,
     HeaderComponent,
     KeepHtmlPipe,
     LanguageSwitchComponent,
     FooterComponent,
   ],
   exports: [
-    CommonLibComponent,
+    TranslateModule,
     HeaderComponent,
     FooterComponent,
     KeepHtmlPipe,
     LanguageSwitchComponent,
-    TranslateModule
   ]
 })
 

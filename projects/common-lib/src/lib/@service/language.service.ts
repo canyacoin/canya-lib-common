@@ -1,23 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { Language } from '../@model/language.model';
 
 declare let require: any
 
 const _ = require('lodash')
 
-export class Language {
-  code: string
-  symbol: string
-  name: string
-
-  constructor(code: string, symbol: string, name: string){
-    this.code = code
-    this.symbol = symbol
-    this.name = name
-  }
-}
-
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class LanguageService {
 
   onLanguageChange: Subject<Language> = new Subject<Language>()

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
-import { LanguageService, Language } from '../@service/language.service';
+import { LanguageService } from '../@service/language.service';
+import { Language } from '../@model/language.model';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
