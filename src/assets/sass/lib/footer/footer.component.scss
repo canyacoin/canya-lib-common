@@ -20,6 +20,13 @@
 @import "@sass/theme/layout/footer";
 @import "@sass/theme/uikit/social";
 
+@import "@sass/fontawesome/fontawesome";
+@import "@sass/fontawesome/fa-brands";
+
 .site-footer {
   background-color: white;
+}
+
+.nav-link {
+  text-decoration: none;
 }
