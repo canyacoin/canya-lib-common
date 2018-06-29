@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { LanguageSwitchComponent } from './language-switch/language-switch.component';
 
 import { KeepHtmlPipe } from './@pipe/keep-html.pipe';
+import { FooterSectionComponent } from './footer-section/footer-section.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -36,6 +37,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     KeepHtmlPipe,
     LanguageSwitchComponent,
     FooterComponent,
+    FooterSectionComponent,
   ],
   exports: [
     TranslateModule,
@@ -43,6 +45,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FooterComponent,
     KeepHtmlPipe,
     LanguageSwitchComponent,
+    FooterSectionComponent,
   ]
 })
 

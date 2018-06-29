@@ -10,5 +10,7 @@
   "footer": {
     "home": "Home"
   },
-  "welcome-to-app": "Welcome to {{ title }}!"
+  "welcome-to-app": "Welcome to {{ title }}!",
+  "footer-section-notice": "Got another question? Ask our active community on Telegram.",
+  "footer-section-cta": "Join us on Telegram"
 }
