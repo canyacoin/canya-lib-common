@@ -1,5 +1,4 @@
 import { Component, OnInit, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
-import angularLoad from 'angular-load';
 import { Renderer2 } from '@angular/core';
 
 declare var BancorConvertWidget: any;
