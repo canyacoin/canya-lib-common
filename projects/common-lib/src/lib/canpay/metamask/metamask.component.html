@@ -1,0 +1,248 @@
+<div class="form-container">
+  <div *ngIf="status === 'loading'" class="text-center">
+    <i class="fa fa-circle-o-notch fa-spin fa-fw"></i> Authenticating ...
+  </div>
+
+  status: {{ status }}
+  <!--
+    |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+    | MetaMask
+    |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+    !-->
+  <section *ngIf="status === 'metaMaskNotAvailable'" class="section bg-white py-10" id="section-main">
+    <div class="container">
+      <header class="section-header my-0 py-0">
+        <!-- <small>Features</small> -->
+        <h6 class="fw-300">Install MetaMask Wallet</h6>
+        <img src="assets/img/metamask.svg" width="60px">
+        <h6 class="fw-300 mb-10">Why MetaMask needed!?</h6>
+        <!-- <h6 class="fw-300 mb-10">With MetaMask you can interract with the Ethereum network. Moreover, the benefit of MetaMask is that
+                <strong>YOU are storing your private keys</strong> instead of letting us to hold to your keys.</h6> -->
+
+        <div class="alert alert-info" role="alert">
+          With MetaMask you can interract with the Ethereum network. Moreover, the benefit of MetaMask is that
+          <strong>YOU are storing your private keys</strong> instead of letting us to hold to your keys.
+        </div>
+
+        <small class="lead text-danger">
+          <i class="fa fa-exclamation-triangle"></i>&nbsp;
+          <strong>IMPORTANT:</strong> remember to switch your MetaMask Wallet to Main Ethereum Network.
+        </small>
+        <hr>
+      </header>
+
+      <div class="row my-0 py-0">
+
+        <div class="col-12 col-md-6 col-xl-4 feature-1">
+          <p class="feature-icon">
+            <a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn" target="_blank">
+              <img src="assets/img/metamask-download.png" width="auto" height="64px" alt="Install MetaMask">
+            </a>
+          </p>
+          <p class="fs-60 fw-900 opacity-10">1</p>
+          <h6>Install MetaMask on a desktop browser like&nbsp;
+            <img src="assets/img/chrome.svg" width="18px" height="18px" style="margin-top: -3px;">&nbsp;
+            <span class="fw-500">Chrome</span>.
+          </h6>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-4 feature-1">
+          <p class="feature-icon">
+            <img src="assets/img/metamask-action.png" width="auto" height="64px" alt="MetaMask Wallet">
+          </p>
+          <p class="fs-60 fw-900 opacity-10">2</p>
+          <h6>Open
+            <img src="assets/img/metamask-icon.png" width="18px" height="18px" style="margin-top: -3px;">&nbsp;MetaMask and create your Ethereum address where you'll deposit your ETH or CAN.
+          </h6>
+          <p class="text-muted"></p>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-4 feature-1">
+          <p class="feature-icon">
+            <img src="assets/img/metamask-pay.png" width="auto" height="64px" alt="MetaMask Wallet">
+          </p>
+          <p class="fs-60 fw-900 opacity-10">3</p>
+          <h6>Unlock your MetaMask Wallet (if needed) and reload the page.</h6>
+          <p class="text-muted"></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="">
+      <p class="text-center">FAQ</p>
+      <br>
+      <div id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="card">
+          <div class="card-header bg-lighter" role="tab" id="headingOne">
+            <h6 class="mb-0">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                What do I need to use CanYa?
+              </a>
+            </h6>
+          </div>
+          <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+            <div class="card-block">
+              <p class="lead">Here’s what you need to get started:</p>
+              <ul>
+                <li>A computer or laptop running the desktop version of Chrome.</li>
+                <li>MetaMask, a digital wallet used specifically with web apps (
+                  <a href="https://metamask.io/" target="_blank">Install MetaMask</a> ).</li>
+                <li>CanYaCoins, a form of digital payment that powers CanYa.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header bg-lighter" role="tab" id="headingTwo">
+            <h6 class="mb-0">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Installing MetaMask
+              </a>
+            </h6>
+          </div>
+          <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="card-block">
+              <p class="lead">To use CanYa, you will need to install MetaMask, a digital wallet. You will need to put money in it to make
+                your first purchase.</p>
+              <p class="lead text-danger">
+                <strong>Note:</strong> A digital wallet like MetaMask acts like a bank account—treat it with respect and make sure
+                you don’t forget your password or the seed words.</p>
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/tfETpi-9ORs?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen=""></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header bg-lighter" role="tab" id="headingThree">
+            <h6 class="mb-0">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Why is MetaMask locked?
+              </a>
+            </h6>
+          </div>
+          <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div class="card-block">
+              <p class="lead">Occasionally the page displays a lock screen. This happens because MetaMask automatically locks your account
+                after a certain period of time. To unlock simply click on the MetaMask extension and type in your password.</p>
+              <img src="assets/img/metamask-locked.png">
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header bg-lighter" role="tab" id="headingFour">
+            <h6 class="mb-0">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Getting CanYaCoins
+              </a>
+            </h6>
+          </div>
+          <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+            <div class="card-block">
+              <p class="lead">You will need to purchase CAN from an exchange, and then transfer the CAN from your exchange wallet to your
+                MetaMask Wallet. Unfortunately, you cannot use CanYa with only an exchange account.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!--
+        |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+        | Switch to MainNet
+        |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+        !-->
+  <section *ngIf="status === 'switchToMainNet'" class="section bg-white py-10" id="section-main">
+    <div class="text-center">
+      <header class="my-0 py-0">
+        <h6 class="fw-300">Switch your MetaMask to Main Ethereum Network!</h6>
+        <img src="assets/img/metamask.svg" width="60px">
+        <!-- <h5 class="fw-300 mb-10">Your MetaMask is not connected to Main Ethereum Network.</h5> -->
+        <h6 class="fw-300 mb-30">Open your wallet, switch your wallet to
+          <span class="fw-500">Main Ethereum Network</span> and reload the page.
+        </h6>
+      </header>
+    </div>
+
+  </section>
+
+  <!--
+        |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+        | Unlock MetaMask
+        |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+        !-->
+  <section *ngIf="status === 'walletLocked'" class="section bg-white py-10" id="section-main">
+    <div class="text-center">
+      <header class="my-0 py-0">
+        <h6 class="fw-300">Your MetaMask is locked!</h6>
+        <img src="assets/img/metamask.svg" width="60px">
+        <h6 class="fw-300 mb-10">Open MetaMask and follow the instructions to unlock it, reload the page and try again.</h6>
+
+        <!-- Remember to switch your MetaMask Wallet to Main Ethereum Network. -->
+        <small class="lead text-danger">
+          <i class="fa fa-exclamation-triangle"></i>&nbsp;
+          <strong>NOTE:</strong> You can 'buy' ether (ETH) in your MetaMask wallet.
+        </small>
+
+        <img src="assets/img/metamask-buy.png">
+      </header>
+    </div>
+
+  </section>
+
+  <!--
+        |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+        | Buy CAN
+        |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+        !-->
+  <section *ngIf="status === 'buyCAN'" class="section bg-white py-10" id="section-main">
+    <div class="">
+      <header class="section-header my-0 py-0">
+        <h5 class="fw-300">Buy CAN</h5>
+        <img src="assets/img/round-icon.svg" width="60px" >
+        <h6 class="fw-300 my-10">You will need to add at least 100 CAN to your MetaMask in order to continue.</h6>
+
+        <br>
+        <br>
+
+        <h5 class="fw-300 px-10">Now available on:</h5>
+        <a class="btn btn-primary my-1" href="https://www.kucoin.com/" target="_blank" data-label="KuCoin">KuCoin</a>
+        <a class="btn btn-primary my-1" href="https://www.aex.com/" target="_blank" data-label="AEX">AEX</a>
+        <a class="btn btn-primary my-1" href="https://xbrick.io/" target="_blank" data-label="XBrick">XBrick</a>
+        <a class="btn btn-primary my-1" href="https://www.cryptopia.co.nz/" target="_blank" data-label="Cryptopia">Cryptopia</a>
+        <a class="btn btn-primary my-1" href="https://www.fatbtc.com/" target="_blank" data-label="Fatbtc">Fatbtc</a>
+        <a class="btn btn-primary my-1" href="https://www.coinspot.com.au/" target="_blank" data-label="CoinSpot">CoinSpot</a>
+        <a class="btn btn-primary my-1" href="https://etherdelta.com/#0x1d462414fe14cf489c7a21cac78509f4bf8cd7c0-ETH" target="_blank"
+          data-label="EtherDelta">EtherDelta</a>
+        <a class="btn btn-primary my-1" href="https://coss.io/" target="_blank" data-label="COSS.IO">COSS.IO</a>
+        <a class="btn btn-primary my-1" href="https://www.qryptos.com/" target="_blank" data-label="QRYPTOS">QRYPTOS</a>
+        <a class="btn btn-primary my-1" href="https://radarrelay.com/" target="_blank" data-label="Radar Relay">Radar Relay</a>
+        <a class="btn btn-primary my-1" href="https://idex.market/" target="_blank" data-label="IDEX">IDEX</a>
+        <a class="btn btn-primary my-1" href="https://www.bancor.network/discover" target="_blank" data-label="Bancor">Bancor</a>
+
+      </header>
+    </div>
+
+  </section>
+
+  <!--
+      |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+      | Access Denied
+      |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+      !-->
+  <section *ngIf="status === 'accessDenied'" class="section bg-white py-10" id="section-main">
+    <div class="">
+      <header class="section-header my-0 py-0">
+        <h5 class="fw-300 text-danger">
+          <i class="fa fa-exclamation-triangle"></i>&nbsp;Access Denied
+        </h5>
+        <img src="assets/img/metamask.svg" width="60px">
+
+        <h6 class="fw-300 mb-30">Sorry, your MetaMask address doesn't have access to this page.</h6>
+        <h6 class="fw-500 mb-30">Please, switch to your whitelisted account.</h6>
+      </header>
+    </div>
+  </section>
+</div>

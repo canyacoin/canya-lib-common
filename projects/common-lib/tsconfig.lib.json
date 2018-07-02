@@ -16,9 +16,13 @@
       "dom",
       "es2015"
     ],
+    "baseUrl": "src",
     "paths": {
+      "@lib/*": [
+        "lib/*"
+      ],      
       "@pipe/*": [
-        "src/lib/@pipe/*"
+        "lib/@pipe/*"
       ]
     }
   },

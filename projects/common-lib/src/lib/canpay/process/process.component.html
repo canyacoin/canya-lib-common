@@ -1,0 +1,21 @@
+<div>
+  <h5>{{ processName }}</h5>
+
+  <div>
+    <p>Now, we can proceed with the
+      <strong>{{ processName }}</strong>. This final step will allow the
+      <strong>{{ dAppName }}</strong> to withdraw the authorized
+      <strong>{{ amount }} CAN</strong> to finalize the process.
+    </p>
+
+    <p>Please, approve the MetaMask transaction that will popup when you click
+      <a href="#" (click)="submit()">"Submit"</a>.</p>
+
+    <div class="mt-10px text-right">
+      <button class="btn btn-primary full-width" (click)="submit()" [disabled]="isLoading">
+        <i *ngIf="isLoading" class="fa fa-circle-o-notch fa-spin fa-fw"></i> {{ isLoading ? 'Submitting ...' : 'Submit' }}
+      </button>
+    </div>
+  </div>
+
+</div>

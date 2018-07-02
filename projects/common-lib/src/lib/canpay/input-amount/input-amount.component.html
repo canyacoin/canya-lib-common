@@ -1,0 +1,11 @@
+  <div>
+    Enter Pay Amount/CAN:
+    <input 
+      (keyup)="onAmountKeyUp($event)"
+      class="payment-amount" 
+      placeholder="0" 
+      type="tel" 
+      maxlength="8"
+      />
+    <button class="btn btn-primary btn-pay-amount" (click)="setAmount()">Next</button>
+</div>

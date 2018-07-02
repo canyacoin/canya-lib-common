@@ -1,0 +1,19 @@
+<div>
+    <h5>Payment</h5>
+  
+    <div>
+      <p>You'll need to pay the
+        <strong>{{ dAppName }}</strong> an amount of <strong>{{ amount }} CAN</strong> from your account.
+      </p>
+  
+      <p>Please, approve the MetaMask transaction that will popup when you click <a href="#" (click)="pay()">"Pay"</a>.</p>
+  
+      <div class="mt-10px text-right">
+        <button class="btn btn-primary full-width" (click)="pay()" [disabled]="isLoading">
+            <i *ngIf="isLoading" class="fa fa-circle-o-notch fa-spin fa-fw"></i> {{ isLoading ? 'Paying ...' : 'Pay' }}
+        </button>
+      </div>
+    </div>
+  
+  </div>
+  

@@ -1,0 +1,43 @@
+.wizard {
+  padding: 2em; // max-width: 550px;
+  margin: 0 auto;
+  transition: 0.5s ease-in-out;
+  border-radius: 5px;
+  overflow: auto; // box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 1px rgba(0, 0, 0, 0.1) inset; // box-shadow: 0 8px 6px -6px #e4e7ea;  
+}
+
+.stepper {
+  border-right: 1px solid #f1f2f3;
+}
+
+.stepper li {
+  margin-bottom: 8px;
+  margin-left: 10px;
+}
+
+.stepper .active {
+  color: #6c757d;
+  font-weight: 600;
+}
+
+.error {
+  font-size: smaller;
+  text-align: center;
+  color: #ff4954;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.alert-secondary,
+.alert-info {
+  padding: 0.25rem 0.75rem;
+  padding: 5px 20px;
+  font-size: 12px;
+  text-align: center;
+}
+
+strong {
+  font-weight: 400
+}
