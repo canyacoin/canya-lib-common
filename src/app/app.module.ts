@@ -12,10 +12,12 @@ import { environment } from '../environments/environment';
 import { canyaAbi } from 'src/app/contracts';
 import { CanCardsModule } from './can-cards/can-cards.module';
 import { HomeModule } from './home/home.module';
+import { CanPayComponent } from './can-pay/can-pay.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    CanPayComponent,
   ],
   imports: [
     BrowserModule,

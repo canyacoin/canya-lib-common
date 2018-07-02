@@ -1,0 +1,22 @@
+
+<div class="canpay">
+
+  <div class="">
+    <button class="btn btn-primary" (click)="newCanPay()">New</button>
+  </div>
+  
+  <canyalib-canpay-wizard
+    *ngIf="CanPay.isVisible"
+    [dAppName]="CanPay.dAppName"
+    [operation]="CanPay.operation"
+    [recepient]="CanPay.recepient"
+    [amount]="CanPay.amount"          
+    [postAuthorisationProcessName]="CanPay.postAuthorisationProcessName"
+    [postAuthorisationProcessResults]="CanPay.postAuthorisationProcessResults"
+    [canyaContract]="CanPay.canyaContract"
+
+    (startPostAuthorisationProcess)="CanPay.startPostAuthorisationProcess($event)"
+    (complete)="CanPay.complete($event)"
+    (cancel)="CanPay.cancel($event)"
+    ></canyalib-canpay-wizard>
+</div>
