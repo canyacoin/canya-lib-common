@@ -3,7 +3,9 @@
 @import "@sass/ebm-variables";
 
 @import "@bootstrap/mixins";
+@import "@bootstrap/print";
 @import "@bootstrap/nav";
+@import "@bootstrap/buttons";
 @import "@bootstrap/bootstrap-grid";
 
 @import "@ebm/functions/ebm-functions";
@@ -31,6 +33,7 @@
 }
 
 .topbar-right {
+  .link:nth-child(n+3),
   .btn:nth-child(n+3) {
     margin-left: get-spacer(4);
   }

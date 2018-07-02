@@ -3,7 +3,10 @@
   <div class="container">
 
     <div class="topbar-left">
-      <a class="topbar-brand" href="{{ _logo.href }}">
+      <a *ngIf="_logo.routerLink" class="topbar-brand" [routerLink]="_logo.routerLink" (click)="onClick(_logo.onClick)">
+        <img class="logo-default" src="{{ _logo.src }}" alt="{{ _logo.alt }}">
+      </a>
+      <a *ngIf="_logo.href" class="topbar-brand" href="{{ _logo.href }}" (click)="onClick(_logo.onClick)">
         <img class="logo-default" src="{{ _logo.src }}" alt="{{ _logo.alt }}">
       </a>
     </div>
@@ -11,12 +14,44 @@
     <div class="topbar-right d-print-none">
       <ul class="topbar-nav nav">
         <li class="nav-item" *ngFor="let navItem of _navItems">
-          <div *ngIf="navItem.replace" class="{{ navItem.class }}" [innerHTML]="navItem.innerHtml | keepHtml "></div>
-          <a *ngIf="!navItem.replace" class="nav-link {{ navItem.class }}" href="{{ navItem.href }}" target="{{ navItem.target }}" [innerHtml]="navItem.innerHtml | keepHtml "></a>
+          <div *ngIf="navItem.replace"
+            class="{{ navItem.class }}"
+            (click)="onClick(navItem.onClick)"
+            [innerHTML]="navItem.innerHtml | translate | keepHtml "></div>
+
+          <a *ngIf="!navItem.replace && navItem.routerLink"
+            class="nav-link {{ navItem.class }}"
+            (click)="onClick(navItem.onClick)"
+            [routerLink]="navItem.routerLink"
+            target="{{ navItem.target }}"
+            [innerHtml]="navItem.innerHtml | translate | keepHtml "></a>
+
+          <a *ngIf="!navItem.replace && navItem.href"
+            class="nav-link {{ navItem.class }}"
+            (click)="onClick(navItem.onClick)"
+            href="{{ navItem.href }}"
+            target="{{ navItem.target }}"
+            [innerHtml]="navItem.innerHtml | translate | keepHtml "></a>
         </li>
       </ul>
-      <button *ngFor="let btn of _buttons" class="{{ btn.class }}" [innerHTML]="btn.innerHtml | keepHtml"></button>
-      <a *ngFor="let btn of _anchorButtons" class="{{ btn.class }}" [innerHTML]="btn.innerHtml | keepHtml" href="{{ btn.href }}"></a>
+      <button *ngFor="let btn of _buttons"
+        class="{{ btn.class }}"
+        (click)="onClick(btn.onClick)"
+        [innerHTML]="btn.innerHtml | translate | keepHtml"></button>
+
+      <span class="link" *ngFor="let btn of _anchorButtons">
+        <a *ngIf="btn.routerLink"
+          class="{{ btn.class }}"
+          (click)="onClick(btn.onClick)"
+          [innerHTML]="btn.innerHtml | translate | keepHtml"
+          [routerLink]="btn.routerLink"></a>
+
+        <a *ngIf="btn.href"
+          class="{{ btn.class }}"
+          (click)="onClick(btn.onClick)"
+          [innerHTML]="btn.innerHtml | translate | keepHtml"
+          href="{{ btn.href }}"></a>
+      </span>
     </div>
 
   </div>

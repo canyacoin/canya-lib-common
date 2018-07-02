@@ -1,19 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
-
-export class NavItem {
-
-  href: string
-  target: string = '_blank'
-  innerHtml: string
-  class: string
-  replace: boolean = false
-
-  constructor(href: string, innerHtml: string){
-    this.href = href
-    this.innerHtml = innerHtml
-  }
-
-}
+import { NavItem } from '../@model/nav-item.model';
 
 @Component({
   selector: 'canyalib-header',
@@ -27,13 +13,14 @@ export class HeaderComponent implements OnInit {
   _logo: any = {
     href: '#',
     src: 'https://canya.com/assets/img/logo.svg',
-    alt: 'CanYa Logo'
+    alt: 'CanYa Logo',
+    onClick: null
   }
 
   _navItems: Array<NavItem> = [
-    new NavItem('https://blog.canya.com.au/', 'Blog'),
-    new NavItem('https://forum.canya.io', 'Forum'),
-    new NavItem('https://t.me/canyacoin', 'Telegram'),
+    new NavItem('https://blog.canya.com.au/', 'header.blog'),
+    new NavItem('https://forum.canya.io', 'header.forum'),
+    new NavItem('https://t.me/joinchat/GI97FhDD1lf6dh-r9XRdvA', 'header.telegram'),
   ]
 
   _buttons: Array<NavItem> = []
@@ -44,6 +31,8 @@ export class HeaderComponent implements OnInit {
     this._logo.src = logo.src
     this._logo.alt = logo.alt
     this._logo.href = logo.href
+    this._logo.routerLink = logo.routerLink
+    this._logo.onClick = logo.onClick
   }
 
   @Input()
@@ -53,6 +42,8 @@ export class HeaderComponent implements OnInit {
 
       _navItem.class = navItem.class
       _navItem.replace = navItem.replace
+      _navItem.onClick = navItem.onClick
+      _navItem.routerLink = navItem.routerLink
 
       this._navItems[navItem.index] = _navItem
     })
@@ -65,6 +56,8 @@ export class HeaderComponent implements OnInit {
 
       _navItem.class = navItem.class
       _navItem.replace = navItem.replace
+      _navItem.onClick = navItem.onClick
+      _navItem.routerLink = navItem.routerLink
 
       this._buttons[navItem.index] = _navItem
     })
@@ -77,14 +70,25 @@ export class HeaderComponent implements OnInit {
 
       _navItem.class = navItem.class
       _navItem.replace = navItem.replace
+      _navItem.onClick = navItem.onClick
+      _navItem.routerLink = navItem.routerLink
 
       this._anchorButtons[navItem.index] = _navItem
     })
   }
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  onClick(fn: any){
+    if (!fn) return false
+
+    let ref = fn[0]
+    let fnName = fn[1]
+    let args = fn[2]
+
+    ref[fnName].apply(ref, args)
   }
 
 }

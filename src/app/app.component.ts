@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import { canyaAbi } from 'src/app/contracts';
 import { environment } from 'src/environments/environment';
 import { Operation, setProcessResult } from 'common-lib';
+import { LanguageService, Language } from 'common-lib';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   CanPay;
 
@@ -15,6 +17,14 @@ export class AppComponent {
 
   constructor() {
     this.newCanPay(true);
+
+    const jp = new Language('jp_JP', 'JP', 'Japanese');
+    lang.addLanguage(jp);
+
+    const dog = new Language('dog', 'DOG', 'Dog');
+    lang.updateLanguage('jp_JP', dog);
+
+    lang.setCurrentLanguage('en_US');
   }
 
   newCanPay(isVisible) {

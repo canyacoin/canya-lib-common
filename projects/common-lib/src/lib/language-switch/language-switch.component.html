@@ -1,0 +1,11 @@
+<div id="language-switch">
+  <div class="icon"><i class="fa fa-language"></i></div>
+  <div class="selected-language">
+    <span>{{ lang.currentLanguage.symbol }}</span>
+  </div>
+  <div class="languages-list">
+    <article *ngFor="let language of lang.activeLanguages" class="lang" (click)="lang.setCurrentLanguage(language.code)">
+      <span>{{ language.name }}</span>
+    </article>
+  </div>
+</div>
