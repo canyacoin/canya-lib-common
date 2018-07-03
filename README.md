@@ -2,6 +2,8 @@
 
 Reusable components across all CanApps
 
+https://canya-common-library.firebaseapp.com/can-cards
+
 ## Important
 
 If you plan to add a new library component or edit an existing one, your first step should be **to update the [./projects/common-lib/package.json](https://github.com/canyaio/Common/blob/master/projects/common-lib/package.json#L3) version**. 
@@ -70,4 +72,8 @@ Secondly, do a `npm publish dist/common-lib/canyaio-common-lib-<version>.tgz --a
 ### Using the component in an external application
 
 To use your new component, update or install the @canyaio/common-lib library into your angular ^6.0.0 application: `npm i @canyaio/common-lib@<version>`
+
+### Deploying the component to the firebase link
+
+Simply do: `sh deploy.sh <version>` and your changes will be deployed to the firebase project: https://canya-common-library.firebaseapp.com/can-cards
 
