@@ -12,48 +12,56 @@ export class CardsComponent implements OnInit {
     {
       name: 'CanInvoice',
       description: 'Easily create your own clean, professional and accurate invoices',
+      translate: 'cards.CanInvoice',
       url: 'https://caninvoice.io',
       type: 'helper'
     },
     {
       name: 'CanStation',
       description: 'Find out the ideal amount of gas to allocate to your ETH transaction',
+      translate: 'cards.CanStation',
       url: 'https://CanStation.io',
       type: 'helper'
     },
     {
       name: 'CanFund',
       description: 'Shoot your pitch, vote, contribute and raise funds',
+      translate: 'cards.CanFund',
       url: 'https://CanFund.io',
       type: 'main'
     },
     {
       name: 'CanSend',
       description: 'Send ERC20 tokens to multiple addresses at once',
+      translate: 'cards.CanSend',
       url: 'https://CanSend.io',
       type: 'helper'
     },
     {
       name: 'CanShare',
       description: 'Send and receive files using distributed technology',
+      translate: 'cards.CanShare',
       url: 'https://canshare.io/',
       type: 'helper'
     },
     {
       name: 'CanTrack',
       description: 'A crisp and easy to use task tracker to help you with your project',
+      translate: 'cards.CanTrack',
       url: 'https://CanTrack.io',
       type: 'helper'
     },
     {
       name: 'CanSign',
       description: 'Upload documents to IPFS and sign them with your Ethereum address.',
+      translate: 'cards.CanSign',
       url: 'https://CanSign.io',
       type: 'helper'
     },
     {
       name: 'CanSeek',
       description: 'Hire and be hired with decentralised technology',
+      translate: 'cards.CanSeek',
       url: 'https://CanSeek.io',
       type: 'main'
     }

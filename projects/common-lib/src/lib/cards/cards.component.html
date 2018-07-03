@@ -10,10 +10,10 @@
             <img [attr.src]="app.logo" [attr.alt]="app.name">
           </div>
           <div class="description">
-            <p>{{ app.description }}</p>
+            <p>{{ app.translate | translate }}</p>
           </div>
           <div class="cta">
-            <button class="btn btn-primary">Check it out</button>
+            <button class="btn btn-primary">{{ 'cards.check-it-out' | translate }}</button>
           </div>
         </a>
       </div>
