@@ -1,0 +1,76 @@
+@import "@bootstrap/functions";
+@import "@sass/_bootstrap-variables";
+@import "@sass/ebm-variables";
+
+@import "@bootstrap/mixins";
+@import "@bootstrap/print";
+@import "@bootstrap/type";
+@import "@bootstrap/utilities";
+@import "@bootstrap/bootstrap-grid";
+@import "@bootstrap/buttons";
+
+@import "@ebm/functions/ebm-functions";
+@import "@ebm/helpers/ebm-helpers";
+
+@import "@sass/theme/variables";
+@import "@sass/theme/mixins";
+
+@import "@sass/theme/content/typography";
+@import "@sass/theme/layout/section";
+@import "@sass/theme/uikit/button";
+@import "@sass/theme/utility/misc";
+
+#canya-cards {
+  padding: get-spacer(5) 0;
+}
+
+.card {
+  @include flex-column-center;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+  text-decoration: none;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  min-height: 400px;
+  padding: 2.5px;
+  &:hover {
+    box-shadow: 0 0 15px 0 rgba(black, 0.1);
+  }
+
+  > div {
+    margin-bottom: 15px;
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  .btn {
+    border-radius: 5px;
+  }
+
+  .description {
+    padding-right: 10px;
+    padding-left: 10px;
+    color: #535353;
+  }
+
+  .img-wrapper {
+    img {
+      height: 150px;
+      width: auto;
+    }
+  }
+
+  .logo-wrapper {
+    img {
+      height: 2.5rem;
+      width: auto;
+    }
+  }
+}
+
+
+
+
+

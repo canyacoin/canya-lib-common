@@ -1,0 +1,22 @@
+<section id="canya-cards">
+  <div class="container">
+    <div class="row">
+      <div class="col-4" *ngFor="let app of apps">
+        <a class="card" [attr.href]="app.url" target="_blank" rel="noopener">
+          <div class="img-wrapper">
+            <img [attr.src]="app.img" [attr.alt]="app.name">
+          </div>
+          <div class="logo-wrapper">
+            <img [attr.src]="app.logo" [attr.alt]="app.name">
+          </div>
+          <div class="description">
+            <p>{{ app.description }}</p>
+          </div>
+          <div class="cta">
+            <button class="btn btn-primary">Check it out</button>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

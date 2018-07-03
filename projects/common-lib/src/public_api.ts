@@ -10,4 +10,5 @@ export { HeaderComponent } from './lib/header/header.component';
 export { FooterComponent } from './lib/footer/footer.component';
 export { FooterSectionComponent } from './lib/footer-section/footer-section.component';
 export { LanguageSwitchComponent } from './lib/language-switch/language-switch.component';
+export { CardsComponent } from './lib/cards/cards.component';
 export { CommonLibModule } from './lib/common-lib.module';
