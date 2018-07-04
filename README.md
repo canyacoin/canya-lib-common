@@ -1,6 +1,6 @@
 # CanPay
 
-Angular component for accepting payments in CAN through a seamless user experience using an a configurable params.
+Angular component for accepting payments in CAN through a seamless user experience using an a configurable params, [See how does it work.](./src/assets/video/PayInCAN.gif)
 
 ## Overview
 
@@ -57,7 +57,7 @@ In your module file:
 
 ```javascript
   // In your controller file, define an object with the following params
-  CanPay = {
+  canPay = {
     dAppName: 'CANWork',
     recepient: <CANWORK_CONTRACT_ADDRESS>,
     amount: <AMOUNT_IN_CAN>,
@@ -69,11 +69,11 @@ In your module file:
 ```html
   <!-- In your template file -->
   <canyalib-canpay
-    [dAppName]="CanPay.dAppName"
-    [recepient]="CanPay.recepient"
-    [amount]="CanPay.amount"
-    (complete)="CanPay.complete($event)"
-    (cancel)="CanPay.cancel($event)"  
+    [dAppName]="canPay.dAppName"
+    [recepient]="canPay.recepient"
+    [amount]="canPay.amount"
+    (complete)="canPay.complete($event)"
+    (cancel)="canPay.cancel($event)"  
   ></canyalib-canpay>
 ```
 
@@ -83,7 +83,7 @@ Nothing to be defiend in the template file, only in the controller file.
 
 ```javascript
   // In your controller file, define an object with the following params
-  CanPay = {
+  canPay = {
     dAppName: 'CANWork',
     recepient: <CANWORK_CONTRACT_ADDRESS>,
     amount: <AMOUNT_IN_CAN>,
@@ -94,7 +94,7 @@ Nothing to be defiend in the template file, only in the controller file.
   constructor(private canPayService: CanPayService) { }
 
   open() {
-    this.canPayService.open(this.CanPay);
+    this.canPayService.open(this.canPay);
   }
 
   onCancel(){
@@ -113,10 +113,10 @@ Here is a list of the full list of peroperties to configure the CANPay component
 | amount | **Optional** If set, no amount-input-box will be displayed to the user and the specified amount will be forced.|
 | minAmount | **Optional** If amount is set, this will be the minum accepted amount from the user.|
 | maxAmount | **Optional** If amount is set, this will be the maximum accepted amount from the user.|
-| complete | Callback to be triggered upon successful completion of the whole wizard steps. <br/> **Input:** [CanPayData](#CanPayData) |
-| cancel | Callback to be triggered if the user cancelled the wizard. <br/> **Input:** [CanPayData](#CanPayData)|
+| complete | Callback to be triggered upon successful completion of the whole wizard steps. <br/> **Input:** [CanPayData](#canpaydata) |
+| cancel | Callback to be triggered if the user cancelled the wizard. <br/> **Input:** [CanPayData](#canpaydata)|
 | postAuthorisationProcessName| **Optional** Action name to be exexuted after payment authorisation, *Ex: 'Task Deposit'*. |
-| startPostAuthorisationProcess | **Optional** callback to be triggered after a user authorisation for the requested amount. It's used to allow a developer to execute external/extended payment operation from the CanYaCoin contract to the dApp contract. <br/> **Input:** [CanPayData](#CanPayData)|
+| startPostAuthorisationProcess | **Optional** callback to be triggered after a user authorisation for the requested amount. It's used to allow a developer to execute external/extended payment operation from the CanYaCoin contract to the dApp contract. <br/> **Input:** [CanPayData](#canpaydata)|
 | postAuthorisationProcessResults | **Optional** if *postAuthorisationProcessName* is set. It's used to notify the wizard of the success or failure of the postAuthorisationProcess.|
 
 ## Interfaces
@@ -190,8 +190,7 @@ Data passed to the callback functions (complete, cancel and startPostAuthorisati
 | amount | Amount specified by either the developer or entered by the user |
 | account | User eth address |
 | balance | User CAN balance |
-| step | Current wizard [Step](#Wizard-Steps)
- |
+| step | Current wizard [Step](#wizard-steps)
 
 ### View
 
