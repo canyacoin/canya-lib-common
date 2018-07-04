@@ -4,7 +4,7 @@ Angular component for accepting payments in CAN through a seamless user experien
 
 ## Overview
 
-Accepting payment with token in any dApp can be cumbersome because a developer needs to do mulitple checks and transactions in order to finalize a payment and same applies for the CanYaCoin (CAN). 
+Accepting payment with token in any dApp can be cumbersome because a developer needs to do mulitple checks and transactions in order to finalize a payment and same applies for the CanYaCoin (CAN).
 
 To streamline the process, we've created a component that takes care of the following:
 
@@ -26,7 +26,8 @@ Component is packed in an npm package and can be used as normal angular module.
 
 ### Installation
 
-`npm i @canyaio/canpay-lib`
+- Run `npm i @canyaio/canpay-lib`
+- Copy [loader image](./src/assets/img/loader.svg) and [metamask](./src/assets/img/metamask.svg) from [here](./src/assets/img) to your `/assets/img` folder.
 
 In your module file:
 
@@ -221,3 +222,13 @@ function setProcessResult(txOrErr) {
 ## Complete Example
 
 The [CanPayExample](./src/app/can-pay-example/can-pay-example.component.ts) is a fully working example on how to use the CanPay with postAuthorisationProcess params.
+
+### Running the Example App
+
+- Run `git clone git@github.com:canyaio/Common.git && cd Common && git checkout lib/canpay && npm i`
+- Start your local test net 'truffle' instance by running `ganache-cli --port 9545` 
+- From main project directory, deploy CanYaCoin and Dao contracts to your testnet by running `npm run init-deploy-contracts`
+- Update [environment vars](../../src/environments/environment.ts) with the deployed contract addresses, you will find the addresses in the file `zos.local.json` under `./src/` directory
+- Run `npm run build_lib && npm start`
+- Open your browser at http://localhost:4200
+- Done!
