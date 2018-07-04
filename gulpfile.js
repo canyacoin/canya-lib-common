@@ -26,7 +26,7 @@ let publicFolder = './projects';
 let srcFolder = './src/assets';
 
 let cssSrcPath = `${srcFolder}/sass`;
-let cssDest    = `${publicFolder}/common-lib/src`;
+let cssDest    = `${publicFolder}/canpay-lib/src`;
 
 // Gather Scss src files to watch and compile
 (fs.readdirSync(cssSrcPath) || []).filter(directory => {

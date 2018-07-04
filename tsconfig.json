@@ -41,11 +41,11 @@
       "@environment/*": [
         "environments/*"
       ],
-      "common-lib": [
-        "dist/common-lib"
+      "canpay-lib": [
+        "dist/canpay-lib"
       ],
-      "common-lib/*": [
-        "dist/common-lib/*"
+      "canpay-lib/*": [
+        "dist/canpay-lib/*"
       ]
     }
   }

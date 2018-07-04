@@ -6,25 +6,20 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
-import { CommonLibModule } from 'common-lib';
-import { CanpayModule } from 'common-lib';
+import { CanpayModule } from 'canpay-lib';
 import { environment } from '../environments/environment';
 import { canyaAbi } from 'src/app/contracts';
-import { CanCardsModule } from './can-cards/can-cards.module';
-import { HomeModule } from './home/home.module';
-import { CanPayComponent } from './can-pay/can-pay.component';
+import { CanPayExampleComponent } from './can-pay-example/can-pay-example.component';
+import { DaoEthService } from 'src/app/services/dao.eth.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CanPayComponent,
+    CanPayExampleComponent,
   ],
   imports: [
     BrowserModule,
-    CommonLibModule,
     AppRoutingModule,
-    CanCardsModule,
-    HomeModule,
     CanpayModule.forRoot({
       contracts: {
         useTestNet: environment.contracts.useTestNet,
@@ -33,7 +28,7 @@ import { CanPayComponent } from './can-pay/can-pay.component';
       }
     })
   ],
-  providers: [],
+  providers: [DaoEthService],
   bootstrap: [AppComponent],
 })
 

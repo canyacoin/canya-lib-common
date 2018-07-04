@@ -5,19 +5,10 @@
 
 export const environment = {
   production: false,
-  firebase: {
-    apiKey: 'AIzaSyDgQSxm0HAfhiLrB_z9dSaWCDeYlYQnBzk',
-    authDomain: 'candao-af747.firebaseapp.com',
-    databaseURL: 'https://candao-af747.firebaseio.com',
-    projectId: 'candao-af747',
-    storageBucket: 'candao-af747.appspot.com',
-    messagingSenderId: '645784786436'
-  },
   contracts: {
-    canYaDao: '0xb8c824f2bb60a3658030d5d47e9869798a0aa477',
-    canYaCoin: '0x93bcf153d792ee96ef485fe27164698e47b61fa1',
+    canYaDao: '0x954750072c38086d60630f499811b2db207694a3',
+    canYaCoin: '0xd16cfae2c8766202fddd77de93267fbf44fb598d',
     useTestNet: true
   },
-  ethNetId: 1524196056249,
-  daoApiBaseUrl: 'http://localhost:5000/candao-af747/us-central1/api'
+  ethNetId: 1524196056249
 };

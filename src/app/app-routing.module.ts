@@ -1,19 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ContainerComponent as CanCardsContainer } from './can-cards/container.component';
-import { ContainerComponent as HomeContainer } from './home/container.component';
-import { CanPayComponent } from 'src/app/can-pay/can-pay.component';
+import { CanPayExampleComponent } from 'src/app/can-pay-example/can-pay-example.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeContainer, },
-  { path: 'can-cards', component: CanCardsContainer, },
-  { path: 'can-pay', component: CanPayComponent, },
-]
+  { path: '', redirectTo: 'can-pay', pathMatch: 'full' },
+  { path: 'can-pay', component: CanPayExampleComponent, },
+];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
-  exports: [ RouterModule ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 
 export class AppRoutingModule { }

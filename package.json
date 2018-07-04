@@ -1,5 +1,5 @@
 {
-  "name": "canya-common",
+  "name": "canya-canpay",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,9 +8,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build_lib": "ng build --prod common-lib",
-    "npm_pack": "cd dist/common-lib && npm pack",
+    "build_lib": "ng build --prod canpay-lib",
+    "npm_pack": "cd dist/canpay-lib && npm pack",
     "package": "npm run build_lib && npm run npm_pack",
+    "publish": "npm publish dist/canpay-lib/canyaio-canpay-lib-$VERSION.tgz --access public",
     "postinstall": "node patch-web3-crypto.js"
   },
   "private": true,
@@ -25,7 +26,6 @@
     "@angular/platform-browser": "^6.0.3",
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
-    "@canyaio/common-lib": "^0.1.5",
     "@ngx-translate/core": "^10.0.2",
     "@ngx-translate/http-loader": "^3.0.1",
     "core-js": "^2.5.4",
