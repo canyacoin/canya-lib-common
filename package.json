@@ -12,7 +12,10 @@
     "npm_pack": "cd dist/canpay-lib && npm pack",
     "package": "npm run build_lib && npm run npm_pack",
     "publish": "npm publish dist/canpay-lib/canyaio-canpay-lib-$VERSION.tgz --access public",
-    "postinstall": "node patch-web3-crypto.js"
+    "postinstall": "node patch-web3-crypto.js",
+    "init-contracts": "cd ./src && zos init CanPayExample && zos add Dao CanYaCoin",
+    "deploy-contracts": "cd ./src && zos push --network local",
+    "init-deploy-contracts": "npm run init-contracts && npm run deploy-contracts"
   },
   "private": true,
   "dependencies": {
@@ -57,11 +60,13 @@
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-html-reporter": "^0.2.2",
     "ng-packagr": "^3.0.3",
+    "openzeppelin-solidity": "^1.10.0",
     "protractor": "~5.3.0",
     "ts-node": "~5.0.1",
     "tsickle": ">=0.25.5",
     "tslib": "^1.7.1",
     "tslint": "~5.9.1",
-    "typescript": "~2.7.2"
+    "typescript": "~2.7.2",
+    "zos-lib": "^1.2.1"
   }
 }
