@@ -3,6 +3,8 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { Subscription } from 'rxjs/Subscription';
+import { CanYaCoin } from '../contracts';
+import merge from 'lodash.merge';
 
 declare let require: any;
 const Web3 = require('web3');
@@ -10,6 +12,13 @@ declare var web3;
 
 const canDecimals = 6;
 const gas = { gasPrice: '8000000000', gas: '210000' };
+const DEFAULT_CONFIGS = {
+  contracts: {
+    useTestNet: false,
+    canyaAbi: CanYaCoin.abi,
+    canyaCoinAddress: null
+  }
+};
 
 export enum WalletType {
   metaMask = 'MetaMask',
@@ -50,6 +59,11 @@ export class EthService implements OnDestroy {
   public account$ = this.account.asObservable();
 
   constructor( @Inject('Config') private config: any = {}) {
+
+    console.log('EthService Configs: ', this.config, ' - DEFAULT_CONFIGS: ', DEFAULT_CONFIGS);
+    this.config = merge(DEFAULT_CONFIGS, this.config);
+    console.log('Final Configs: ', this.config);
+
     if (typeof web3 !== 'undefined') {
 
       this.web3js = new Web3(web3.currentProvider);

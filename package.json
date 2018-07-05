@@ -35,6 +35,7 @@
     "document-register-element": "^1.7.2",
     "ebm": "github:easyboxmodel/ebm",
     "hoek": "^4.2.1",
+    "lodash.merge": "^4.6.1",
     "ng2-bootstrap-modal": "^1.0.1",
     "rxjs": "^6.0.0",
     "rxjs-compat": "^6.2.1",

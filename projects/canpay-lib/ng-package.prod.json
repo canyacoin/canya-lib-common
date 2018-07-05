@@ -3,5 +3,6 @@
   "dest": "../../dist/canpay-lib",
   "lib": {
     "entryFile": "src/public_api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": ["ng2-bootstrap-modal","web3","lodash.merge"]
 }

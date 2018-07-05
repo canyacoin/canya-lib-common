@@ -45,7 +45,7 @@ In your module file:
       contracts: {
         useTestNet: <TRUE_FALSE>,
         canyaCoinAddress: <CanYaCoin_ADDRESS>,
-        canyaAbi: <CanYaCoin_ABI>
+        canyaAbi: <CanYaCoin_ABI> // optional, default is set the prod CanYaCoin ABI
       }
     })
   ],

@@ -1,12 +1,15 @@
 {
   "name": "@canyaio/canpay-lib",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "readme": "README.md",
+  "dependencies": {
+    "ng2-bootstrap-modal": "^1.0.1",
+    "web3": "^1.0.0-beta.34",
+    "lodash.merge": "^4.6.1"
+  },
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
-    "ng2-bootstrap-modal": "^1.0.1",
-    "web3": "^1.0.0-beta.34",
     "rxjs": "^6.0.0"
   }
 }

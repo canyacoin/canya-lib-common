@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 
 import { CanpayModule } from 'canpay-lib';
 import { environment } from '../environments/environment';
-import { canyaAbi } from 'src/app/contracts';
 import { CanPayExampleComponent } from './can-pay-example/can-pay-example.component';
 import { DaoEthService } from 'src/app/services/dao.eth.service';
 
@@ -24,7 +23,7 @@ import { DaoEthService } from 'src/app/services/dao.eth.service';
       contracts: {
         useTestNet: environment.contracts.useTestNet,
         canyaCoinAddress: environment.contracts.canYaCoin,
-        canyaAbi: canyaAbi
+        // canyaAbi: <CanYaCoin_ABI> // default is set to prod CanYaCoin ABI
       }
     })
   ],
