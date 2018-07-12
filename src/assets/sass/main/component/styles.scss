@@ -2,6 +2,10 @@
 
 $site-wrapper-padding-top: 112px;
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 body {
   background-color: $gray-100;
 }
@@ -10,4 +14,4 @@ body {
   padding-top: $site-wrapper-padding-top;
   min-height: 89vh;
 }
-
+ 
