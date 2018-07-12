@@ -1,7 +1,7 @@
 <section id="canya-cards">
   <div class="container">
     <div class="row">
-      <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let app of apps">
+      <div class="col-lg-4" *ngFor="let app of apps">
         <a class="card" [attr.href]="app.url" target="_blank" rel="noopener">
           <div class="img-wrapper">
             <img class="max-w-50v py-20" [attr.src]="app.img" [attr.alt]="app.name">
