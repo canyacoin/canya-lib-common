@@ -1,7 +1,7 @@
 <section id="canya-cards">
   <div class="container">
     <div class="row">
-      <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let app of apps">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" *ngFor="let app of apps">
         <a class="card" [attr.href]="app.url" target="_blank" rel="noopener">
           <div class="img-wrapper">
             <img style="max-width:75%; padding-top:15px;" [attr.src]="app.img" [attr.alt]="app.name">
@@ -13,7 +13,7 @@
             <p>{{ app.translate | translate }}</p>
           </div>
           <div class="cta" style="padding-bottom: 25px;">
-            <button class="btn btn-primary">{{ 'cards.check-it-out' | translate }}</button> 
+            <button class="btn btn-primary">{{ 'cards.check-it-out' | translate }}</button>
           </div>
         </a>
       </div>
