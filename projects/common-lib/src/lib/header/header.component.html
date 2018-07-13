@@ -1,7 +1,6 @@
 <!-- Topbar -->
 <nav class="topbar topbar-expand-md topbar-sticky">
-  <div class="container">
-
+  <div class="container"> 
     <div class="topbar-left">
       <a *ngIf="_logo.routerLink" class="topbar-brand" [routerLink]="_logo.routerLink" (click)="onClick(_logo.onClick)">
         <img class="logo-default" src="{{ _logo.src }}" alt="{{ _logo.alt }}">
@@ -11,7 +10,7 @@
       </a>
     </div>
 
-    <div class="topbar-right d-print-none">
+    <div class="collapse navbar-collapse topbar-right d-print-none">
       <ul class="topbar-nav nav">
         <li class="nav-item" *ngFor="let navItem of _navItems">
           <div *ngIf="navItem.replace"
@@ -52,6 +51,7 @@
           [innerHTML]="btn.innerHtml | translate | keepHtml"
           href="{{ btn.href }}"></a>
       </span>
+      
     </div>
 
   </div>

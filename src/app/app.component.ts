@@ -9,12 +9,14 @@ import { LanguageService, Language } from 'common-lib';
 
 export class AppComponent {
   constructor(public lang: LanguageService){
-    let jp = new Language('jp_JP', 'JP', 'Japanese')
-    lang.addLanguage(jp)
-
-    let dog = new Language('dog', 'DOG', 'Dog')
-    lang.updateLanguage('jp_JP', dog)
-
+ 
+    let ko = new Language ('KO','KO','한국어')
+    let zh = new Language('ZH','ZH','中文')
+    lang.addLanguage(zh)
+    lang.addLanguage(ko)
+    //let jp = new Language('jp_JP', 'JP', 'Japanese')
+    //let dog = new Language('dog', 'DOG', 'Dog')
+    // lang.updateLanguage('jp_JP', dog)  
     lang.setCurrentLanguage('en_US')
   }
 }
