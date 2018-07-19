@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
-import { EthService } from '../services/eth.service';
+import { CanYaCoinEthService } from '../services/canyacoin-eth.service';
 
 export enum Step {
   metamask = 0,
@@ -91,7 +91,7 @@ export class CanpayWizardComponent implements OnInit {
 
   @Input() set canyaContract(canyaContract: Contract) {
     console.log('setting up canyaContract: ', canyaContract);
-    this.ethService.initCanYaContract(canyaContract.abi, canyaContract.address);
+    this.canyaCoinEthService.initContract(canyaContract.abi, canyaContract.address);
   }
 
   @Input() set postAuthorisationProcessResults(postAuthorisationProcessResults: ProcessActionResult) {
@@ -116,7 +116,7 @@ export class CanpayWizardComponent implements OnInit {
   insufficientBalance = false;
   processSummaryMsg: string;
 
-  constructor(private ethService: EthService) { }
+  constructor(private canyaCoinEthService: CanYaCoinEthService) { }
 
   ngOnInit() {
     this.steps = [
@@ -204,11 +204,11 @@ export class CanpayWizardComponent implements OnInit {
     this.updateCurrentStep(Step.balanceCheck);
     this.isLoading = true;
 
-    this.ethService.getCanYaBalance()
+    this.canyaCoinEthService.getCanYaBalance()
       .then(_balance => {
         console.log('balance: ', _balance);
         this.balance = Number(_balance);
-        this.account = this.ethService.getAccount();
+        this.account = this.canyaCoinEthService.getOwnerAccount();
         this.insufficientBalance = Number(_balance) < this.amount;
         if (!this.insufficientBalance) {
           this.updateCurrentStep(this.operation === Operation.auth ? Step.authorisation : Step.payment);

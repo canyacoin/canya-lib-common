@@ -19,6 +19,7 @@ import { CanpayModalComponent } from './canpay-modal/canpay-modal.component';
 import { InputAmountComponent } from './input-amount/input-amount.component';
 import { CanPayService } from './services/canpay.service';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
+import { CanYaCoinEthService } from './services/canyacoin-eth.service';
 
 const COMPONENTS = [
   CanpayModalComponent,
@@ -36,7 +37,7 @@ const COMPONENTS = [
   CommaSepNumPipe
 ];
 
-const PROVIDERS = [EthService, CanPayService];
+const PROVIDERS = [EthService, CanYaCoinEthService, CanPayService];
 
 @NgModule({
   imports: [

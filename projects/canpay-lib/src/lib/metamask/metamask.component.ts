@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { EthService, Web3LoadingStatus, WalletType } from '../services/eth.service';
-import { Subscription } from 'rxjs/Subscription';
-import 'rxjs/add/operator/delay';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'canyalib-metamask',

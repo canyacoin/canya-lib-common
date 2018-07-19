@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { EthService } from '../services/eth.service';
+import { CanYaCoinEthService } from '../services/canyacoin-eth.service';
 
 @Component({
   selector: 'canyalib-payment',
@@ -14,7 +14,7 @@ export class PaymentComponent implements OnInit {
   @Input() amount = 0;
   isLoading = false;
 
-  constructor(private ethService: EthService) { }
+  constructor(private canyaCoinEthService: CanYaCoinEthService) { }
 
   ngOnInit() { }
 
@@ -22,7 +22,7 @@ export class PaymentComponent implements OnInit {
     if (this.isLoading) { return; }
 
     this.isLoading = true;
-    this.ethService.payWithCAN(this.recepient, this.amount)
+    this.canyaCoinEthService.payWithCAN(this.recepient, this.amount)
       .then(tx => tx.status === 0 ? this.error.emit('Transaction failed') : this.success.emit(tx))
       .catch(err => this.error.emit(err.message))
       .then(() => this.isLoading = false);

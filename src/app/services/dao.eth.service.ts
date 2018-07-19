@@ -16,7 +16,7 @@ export class DaoEthService extends EthService {
 
   createUserEscrow(fromAccount = this.account.value, amount) {
     console.log('createUserEscrow: ', this.daoContract, fromAccount, amount);
-    return this.daoContract.methods.createUserEscrow(this.amountToCANTokens(amount)).send({ from: fromAccount, ...this.gas() })
+    return this.daoContract.methods.createUserEscrow(this.amountToCANTokens(amount)).send({ from: fromAccount, ...this.getDefaultGasParams() })
       .then(tx => this.getTransactionReceiptMined(tx.transactionHash))
       .then(tx => {
         console.log('createUserEscrowTx: ', tx);

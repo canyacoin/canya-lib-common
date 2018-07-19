@@ -6,8 +6,8 @@
 export const environment = {
   production: false,
   contracts: {
-    canYaDao: '0x954750072c38086d60630f499811b2db207694a3',
-    canYaCoin: '0xd16cfae2c8766202fddd77de93267fbf44fb598d',
+    canYaDao: '0x303dc9039b6e964ff25eff8f215621d1a02af816',
+    canYaCoin: '0x3986826916e72cf07c278300b9525dc32a29f259',
     useTestNet: true
   },
   ethNetId: 1524196056249

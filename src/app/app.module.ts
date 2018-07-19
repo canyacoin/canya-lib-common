@@ -20,8 +20,8 @@ import { DaoEthService } from 'src/app/services/dao.eth.service';
     BrowserModule,
     AppRoutingModule,
     CanpayModule.forRoot({
+      useTestNet: environment.contracts.useTestNet,
       contracts: {
-        useTestNet: environment.contracts.useTestNet,
         canyaCoinAddress: environment.contracts.canYaCoin,
         // canyaAbi: <CanYaCoin_ABI> // default is set to prod CanYaCoin ABI
       }
