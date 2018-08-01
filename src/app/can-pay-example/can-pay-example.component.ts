@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Operation, setProcessResult, ProcessAction, CanPay, CanPayData } from 'canpay-lib';
+import { Operation, setProcessResult, ProcessAction, CanPay, CanPayData, CanPayService } from 'canpay-lib';
 import { DaoEthService } from 'src/app/services/dao.eth.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class CanPayExampleComponent {
     // properties
     dAppName: 'CanYaDAO',
     operation: Operation.auth, // Authorise or Pay, Default is: Authorise
-    recepient: environment.contracts.canYaDao,
+    recepient: environment.contracts.testAccount,
     amount: 0, // allow the user to enter amount through an input box
     minAmount: 1000, // Default is 1
     maxAmount: 50000, // Default is 'No Maximum'
@@ -30,7 +30,7 @@ export class CanPayExampleComponent {
     postAuthorisationProcessResults: null
   };
 
-  constructor(private daoEthService: DaoEthService) { }
+  constructor(private daoEthService: DaoEthService, private canPayService:CanPayService) { }
 
   startCanPayUserActivation(canPayData: CanPayData) {
     console.log(canPayData);
@@ -65,5 +65,8 @@ export class CanPayExampleComponent {
     console.log(canPayData);
     this.isVisible = false;
   }
-
+  
+  modalCanPay(){ 
+    this.canPayService.open(this.canPay);
+  }
 }

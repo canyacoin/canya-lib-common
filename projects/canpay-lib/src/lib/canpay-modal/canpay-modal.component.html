@@ -9,16 +9,18 @@
         [amount]="canPay.amount"          
         [postAuthorisationProcessName]="canPay.postAuthorisationProcessName"
         [postAuthorisationProcessResults]="canPay.postAuthorisationProcessResults"
-
         (currentStep)="currentStep($event)"
         (startPostAuthorisationProcess)="canPay.startPostAuthorisationProcess($event)"
         (complete)="canPay.complete($event)"
         (cancel)="canPay.cancel($event)"
       ></canyalib-canpay>
-    </div>
-    <div class="modal-footer" *ngIf="step < Step.confirmation">
-      <button type="button" class="btn btn-default" (click)="close()">Cancel</button>
-      <!-- <button type="button" class="btn btn-primary" (click)="confirm()">OK</button> -->
-    </div>
+      <div class="container">
+        <div class="row">
+            <div class="col-12 text-right">  
+                <button type="button" class="btn btn-default" (click)="close()">Cancel</button>
+            </div>
+          </div> 
+       </div> 
+    </div> 
   </div>
 </div>
