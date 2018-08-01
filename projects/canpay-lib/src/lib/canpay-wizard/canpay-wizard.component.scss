@@ -41,3 +41,27 @@
 strong {
   font-weight: 400
 }
+.wizard-hidden-desktop{
+    display: none;
+}
+.wizard-hidden-mobile{
+    display: block;
+}
+.always-hidden{
+    display: none !important;
+}
+
+@media screen and (max-width:768px){    
+    .wizard-hidden-desktop{
+        display: block;
+    }
+    .wizard-hidden-mobile{
+        display: none;
+    }
+    .list-horizontal li{
+        display: inline;
+    }
+    .wizard-mobile-text-center{
+        text-align: center;
+    }
+}
