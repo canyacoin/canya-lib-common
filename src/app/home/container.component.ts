@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContainerComponent implements OnInit {
 
-  title = 'Canya Common Library'
+  title = 'Canya Common Library';
 
   constructor() { }
 
