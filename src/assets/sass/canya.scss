@@ -43,3 +43,203 @@
 // @import "sass/theme/uikit/nav";
 // @import "sass/theme/uikit/alert";
 // @import "sass/theme/layout/topbar";
+
+h1, h2, h3{
+    font-weight: 700;
+}
+h4{
+    font-weight: 600;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.text-right{
+    text-align: right;
+}
+
+
+/* Padding classes */
+.p-5{
+    padding: 5px;
+}
+.p-10{
+    padding: 10px;
+}
+.p-15{
+    padding: 15px;
+}
+.p-20{
+    padding: 20px;
+}
+.p-25{
+    padding: 25px;
+}
+
+.px-5{
+    padding: 0 5px 0 5px;
+}
+.px-10{
+    padding: 0 10px 0 10px;
+}
+.px-15{
+    padding: 0 15px 0 15px;
+}
+.px-20{
+    padding: 0 20px 0 20px;
+}
+.px-25{
+    padding: 0 25px 0 25px;
+}
+
+.py-5{
+    padding: 5px 0 5px 0;
+}
+.py-10{
+    padding: 10px 0 10px 0;
+}
+.py-15{
+    padding: 15px 0 15px 0;
+}
+.py-20{
+    padding: 20px 0 20px 0;
+}
+.py-25{
+    padding: 25px 0 25px 0;
+}
+
+/* Margin Classes */
+
+
+/* margin classes */
+.m-5{
+    margin: 5px;
+}
+.m-10{
+    margin: 10px;
+}
+.m-15{
+    margin: 15px;
+}
+.m-20{
+    margin: 20px;
+}
+.m-25{
+    margin: 25px;
+}
+
+.mx-5{
+    margin: 0 5px 0 5px;
+}
+.mx-10{
+    margin: 0 10px 0 10px;
+}
+.mx-15{
+    margin: 0 15px 0 15px;
+}
+.mx-20{
+    margin: 0 20px 0 20px;
+}
+.mx-25{
+    margin: 0 25px 0 25px;
+}
+
+.my-5{
+    margin: 5px 0 5px 0;
+}
+.my-10{
+    margin: 10px 0 10px 0;
+}
+.my-15{
+    margin: 15px 0 15px 0;
+}
+.my-20{
+    margin: 20px 0 20px 0;
+}
+.my-25{
+    margin: 25px 0 25px 0;
+}
+
+/* Minimum Heights Classes */
+.min-h-10v{
+    min-height: 10vh;
+}
+.min-h-20v{
+    min-height: 20vh;
+}
+.min-h-30v{
+    min-height: 30vh;
+}
+.min-h-40v{
+    min-height: 40vh;
+}
+.min-h-50v{
+    min-height: 50vh;
+}
+/* Minimum Width classes */
+.min-w-10v{
+    min-width: 10vh;
+}
+.min-w-20v{
+    min-width: 20vh;
+}
+.min-w-30v{
+    min-width: 30vh;
+}
+.min-w-40v{
+    min-width: 40vh;
+}
+.min-w-50v{
+    min-width: 50vh;
+}
+/* Maximum Heights Classes */
+.max-h-10v{
+    max-height: 10vh;
+}
+.max-h-20v{
+    max-height: 20vh;
+}
+.max-h-30v{
+    max-height: 30vh;
+}
+.max-h-40v{
+    max-height: 40vh;
+}
+.max-h-50v{
+    max-height: 50vh;
+}
+/* Maximum Width classes */
+.max-w-10v{
+    max-width: 10vh;
+}
+.max-w-20v{
+    max-width: 20vh;
+}
+.max-w-30v{
+    max-width: 30vh;
+}
+.max-w-40v{
+    max-width: 40vh;
+}
+.max-w-50v{
+    max-width: 50vh;
+}
+
+.centered-div{
+    margin: 0 auto;
+}
+
+.rounded-div{
+    border-radius: 5px; 
+    background-color: white;
+    margin: 0 auto;
+}
+
+.drop-shadow{
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
