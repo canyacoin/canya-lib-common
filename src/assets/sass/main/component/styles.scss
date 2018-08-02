@@ -3,9 +3,11 @@
 $site-wrapper-padding-top: 112px;
 
 html, body {
-  max-width: 100%;
   overflow-x: hidden;
+  max-width: 100%;
+  position: relative;
 }
+
 body {
   background-color: $gray-100;
 }
