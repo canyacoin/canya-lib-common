@@ -16,15 +16,13 @@
           <div *ngIf="navItem.replace"
             class="{{ navItem.class }}"
             (click)="onClick(navItem.onClick)"
-            [innerHTML]="navItem.innerHtml | translate | keepHtml "></div>
-
+            [innerHTML]="navItem.innerHtml | translate | keepHtml "></div> 
           <a *ngIf="!navItem.replace && navItem.routerLink"
             class="nav-link {{ navItem.class }}"
             (click)="onClick(navItem.onClick)"
             [routerLink]="navItem.routerLink"
             target="{{ navItem.target }}"
-            [innerHtml]="navItem.innerHtml | translate | keepHtml "></a>
-
+            [innerHtml]="navItem.innerHtml | translate | keepHtml "></a> 
           <a *ngIf="!navItem.replace && navItem.href"
             class="nav-link {{ navItem.class }}"
             (click)="onClick(navItem.onClick)"
@@ -36,15 +34,13 @@
       <button *ngFor="let btn of _buttons"
         class="{{ btn.class }}"
         (click)="onClick(btn.onClick)"
-        [innerHTML]="btn.innerHtml | translate | keepHtml"></button>
-
+        [innerHTML]="btn.innerHtml | translate | keepHtml"></button> 
       <span class="link" *ngFor="let btn of _anchorButtons">
         <a *ngIf="btn.routerLink"
           class="{{ btn.class }}"
           (click)="onClick(btn.onClick)"
           [innerHTML]="btn.innerHtml | translate | keepHtml"
-          [routerLink]="btn.routerLink"></a>
-
+          [routerLink]="btn.routerLink"></a> 
         <a *ngIf="btn.href"
           class="{{ btn.class }}"
           (click)="onClick(btn.onClick)"
