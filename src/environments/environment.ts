@@ -6,7 +6,7 @@
 export const environment = {
   production: false,
   contracts: {
-    canYaDao: '0x303dc9039b6e964ff25eff8f215621d1a02af816',
+    canYaDao: '0xf558DBf7e2F1081D0331Dc0e025c2ECca12129d1',
     canYaCoin: '0x1d462414fe14cf489c7a21cac78509f4bf8cd7c0',
     useTestNet: false,
     testAccount: '0xf558DBf7e2F1081D0331Dc0e025c2ECca12129d1'

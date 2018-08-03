@@ -1,7 +1,14 @@
 <!-- Modal -->
 <div class="modal-dialog modal-lg">
-  <div class="modal-content mt-70">
-    <div class="modal-body">
+  <div class="modal-content desktop-mt-70">
+    <div class="modal-body"> 
+      <div class="container">
+        <div class="row">
+            <div class="col-12 text-left">  
+                <button type="button" class="btn btn-default" (click)="close()">X</button>
+            </div>
+          </div> 
+       </div> 
       <canyalib-canpay
         [dAppName]="canPay.dAppName"
         [operation]="canPay.operation"
@@ -14,13 +21,6 @@
         (complete)="canPay.complete($event)"
         (cancel)="canPay.cancel($event)"
       ></canyalib-canpay>
-      <div class="container">
-        <div class="row">
-            <div class="col-12 text-right">  
-                <button type="button" class="btn btn-default" (click)="close()">Cancel</button>
-            </div>
-          </div> 
-       </div> 
     </div> 
   </div>
 </div>
