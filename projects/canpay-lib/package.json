@@ -1,6 +1,6 @@
 {
   "name": "@canyaio/canpay-lib",
-  "version": "0.1.6",
+  "version": "0.1.9",
   "readme": "README.md",
   "dependencies": {
     "ng2-bootstrap-modal": "^1.0.1",
