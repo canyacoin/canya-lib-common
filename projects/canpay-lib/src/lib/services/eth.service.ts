@@ -1,6 +1,6 @@
-import { Injectable, OnDestroy, Inject } from '@angular/core';
-import { BehaviorSubject, Observable, Subject, Subscription } from 'rxjs';
+import { Inject, Injectable, OnDestroy } from '@angular/core';
 import merge from 'lodash.merge';
+import { BehaviorSubject, Observable, Subject, Subscription } from 'rxjs';
 
 declare let require: any;
 const Web3 = require('web3');
@@ -188,7 +188,7 @@ export class EthService implements OnDestroy {
 
   getTransactionReceiptMined = (txHash, interval = 500, blockLimit = 0) => {
     const transactionReceiptAsync = (resolve, reject) => {
-      web3.eth.getTransactionReceipt(txHash, (error, receipt) => {
+      this.web3js.eth.getTransactionReceipt(txHash, (error, receipt) => {
         if (error) {
           return reject(error);
         }
