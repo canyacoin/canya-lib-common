@@ -15,80 +15,82 @@ export class HeaderComponent implements OnInit {
     src: 'https://canya.com/assets/img/logo.svg',
     alt: 'CanYa Logo',
     onClick: null
-  }
+  };
 
   _navItems: Array<NavItem> = [
-    new NavItem('https://blog.canya.com.au/', 'header.blog'),
-    new NavItem('https://forum.canya.io', 'header.forum'),
-    new NavItem('https://t.me/joinchat/GI97FhDD1lf6dh-r9XRdvA', 'header.telegram'),
-  ]
+    new NavItem('https://blog.canya.com.au/', 'header.blog', null),
+    new NavItem('https://forum.canya.io', 'header.forum', null),
+    new NavItem('https://t.me/joinchat/GI97FhDD1lf6dh-r9XRdvA', 'header.telegram', null),
+  ];
 
-  _buttons: Array<NavItem> = []
-  _anchorButtons: Array<NavItem> = []
+  _buttons: Array<NavItem> = [];
+  _anchorButtons: Array<NavItem> = [];
 
   @Input()
   set logo(logo: any) {
-    this._logo.src = logo.src
-    this._logo.alt = logo.alt
-    this._logo.href = logo.href
-    this._logo.routerLink = logo.routerLink
-    this._logo.onClick = logo.onClick
+    this._logo.src = logo.src;
+    this._logo.alt = logo.alt;
+    this._logo.href = logo.href;
+    this._logo.routerLink = logo.routerLink;
+    this._logo.onClick = logo.onClick;
   }
 
   @Input()
   set navItems(navItems: Array<any>) {
     navItems.forEach(navItem => {
-      let _navItem = new NavItem(navItem.href, navItem.innerHtml)
+      const _navItem = new NavItem(navItem.href, navItem.innerHtml, navItem.class);
 
-      _navItem.class = navItem.class
-      _navItem.replace = navItem.replace
-      _navItem.onClick = navItem.onClick
-      _navItem.routerLink = navItem.routerLink
+      _navItem.class = navItem.class;
+      _navItem.replace = navItem.replace;
+      _navItem.onClick = navItem.onClick;
+      _navItem.routerLink = navItem.routerLink;
 
-      this._navItems[navItem.index] = _navItem
-    })
+      this._navItems[navItem.index] = _navItem;
+    });
   }
 
   @Input()
   set buttons(buttons: Array<any>) {
     buttons.forEach(navItem => {
-      let _navItem = new NavItem(navItem.href, navItem.innerHtml)
+      const _navItem = new NavItem(navItem.href, navItem.innerHtml,  navItem.class);
 
-      _navItem.class = navItem.class
-      _navItem.replace = navItem.replace
-      _navItem.onClick = navItem.onClick
-      _navItem.routerLink = navItem.routerLink
+      _navItem.class = navItem.class;
+      _navItem.replace = navItem.replace;
+      _navItem.onClick = navItem.onClick;
+      _navItem.routerLink = navItem.routerLink;
 
-      this._buttons[navItem.index] = _navItem
-    })
+      this._buttons[navItem.index] = _navItem;
+    });
   }
 
   @Input()
   set anchorButtons(anchorButtons: Array<any>) {
     anchorButtons.forEach(navItem => {
-      let _navItem = new NavItem(navItem.href, navItem.innerHtml)
+      const _navItem = new NavItem(navItem.href, navItem.innerHtml, navItem.class);
 
-      _navItem.class = navItem.class
-      _navItem.replace = navItem.replace
-      _navItem.onClick = navItem.onClick
-      _navItem.routerLink = navItem.routerLink
+      _navItem.class = navItem.class;
+      _navItem.replace = navItem.replace;
+      _navItem.onClick = navItem.onClick;
+      _navItem.routerLink = navItem.routerLink;
 
-      this._anchorButtons[navItem.index] = _navItem
-    })
+      this._anchorButtons[navItem.index] = _navItem;
+    });
   }
 
   constructor() {}
 
   ngOnInit() {}
 
-  onClick(fn: any){
-    if (!fn) return false
+  onClick(fn: any) {
+    if (!fn) {
+      return false;
+    }
 
-    let ref = fn[0]
-    let fnName = fn[1]
-    let args = fn[2]
+    const ref = fn[0];
+    const fnName = fn[1];
+    const args = fn[2];
 
-    ref[fnName].apply(ref, args)
+    ref[fnName].apply(ref, args);
   }
 
 }

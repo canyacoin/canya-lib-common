@@ -1,16 +1,16 @@
 export class NavItem {
 
-  href: string
-  routerLink: any
-  target: string = '_blank'
-  innerHtml: string
-  class: string
-  replace: boolean = false
-  onClick: string
+  href: string;
+  routerLink: any;
+  target = '_blank';
+  innerHtml: string;
+  class: string;
+  replace = false;
+  onClick: string;
 
-  constructor(href: string, innerHtml: string){
-    this.href = href
-    this.innerHtml = innerHtml
+  constructor(href: string, innerHtml: string, classes: string) {
+    this.href = href;
+    this.innerHtml = innerHtml;
+    this.class = classes;
   }
-
 }

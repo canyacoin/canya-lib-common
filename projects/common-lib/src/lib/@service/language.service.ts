@@ -17,7 +17,7 @@ export class LanguageService {
 
   languages: Array<Language> = [
     { code: 'en_US', symbol: 'EN', name: 'English (US)' },
-    { code: 'es_ES', symbol: 'ES', name: 'Español' },
+    { code: 'es_ES', symbol: 'ES', name: 'Español' }
   ]
 
   activeLanguages: Array<Language> = []
